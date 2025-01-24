@@ -47,9 +47,6 @@ class BankController extends Controller
         }
         $banks = Bank::all();
         $soals = Bank::where('nomor', $nomor)->get();
-        // session(['soals' => $soals]);
-        // $soals = session('soals');
-        // return redirect()->route('main');
 
         return view('main', compact('soals', 'banks'));
     }
