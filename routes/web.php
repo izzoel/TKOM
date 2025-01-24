@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BankController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', [BankController::class, 'index'])->name('main');
+Route::get('/login', [BankController::class, 'login'])->name('login');
+Route::post('/login', [BankController::class, 'login'])->name('login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/bank', [BankController::class, 'bank'])->name('bank');
+    Route::get('/soal/{nomor}', [BankController::class, 'soal'])->name('soal');
+    Route::get('/logout', [BankController::class, 'logout'])->name('logout');
 });
