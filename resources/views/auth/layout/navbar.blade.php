@@ -1,4 +1,4 @@
-<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+<nav id="layout-navbar" class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme">
     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
             <i class="bx bx-menu bx-sm"></i>
@@ -6,7 +6,10 @@
     </div>
     <div class="navbar-nav-left d-flex align-items-center" id="navbar-collapse-left">
         <ul class="navbar-nav flex-row align-items-center">
-            <li>
+            <li class="nav-item me-3">
+                {{-- <a href="{{ route('login') }}" class="btn btn-sm btn-outline-danger">Kalkulator</a> --}}
+            </li>
+            {{-- <li>
                 <a class="nav-link" href="#">Home</a>
             </li>
             <div class="text-muted fw-semibold px-2 fs-5"> / </div>
@@ -16,7 +19,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 </ul>
-            </li>
+            </li> --}}
 
         </ul>
     </div>
@@ -29,7 +32,7 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        <img src="" alt class="w-px-40 h-auto rounded-circle" />
+                        <img src="{{ asset(auth()->user()->foto) }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -38,12 +41,12 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="{{ asset(auth()->user()->foto) }}" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block"></span>
-                                    <small class="text-muted"></small>
+                                    <span class="fw-semibold d-block">{{ auth()->user()->nama }}</span>
+                                    <small class="text-muted">{{ auth()->user()->nim }}</small>
                                 </div>
                             </div>
                         </a>

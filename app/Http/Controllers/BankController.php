@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DOMXPath;
 use DOMDocument;
 use App\Models\Bank;
+use App\Models\Jawab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,8 +48,29 @@ class BankController extends Controller
         }
         $banks = Bank::all();
         $soals = Bank::where('nomor', $nomor)->get();
+        $jawabs = Jawab::where('nim', auth()->user()->nim)->pluck('nomor')->toArray();
 
-        return view('main', compact('soals', 'banks'));
+        return view('main', compact('soals', 'banks', 'jawabs'));
+    }
+
+
+    public function jawab($nomor, $jawab, Request $request)
+    {
+        Jawab::updateOrCreate(
+            ['nim' => auth()->user()->nim, 'nomor' => $nomor], // Kondisi untuk memeriksa entri yang ada
+            [
+                'nomor' => $nomor,
+                'jawaban' => $jawab
+            ] // Data yang akan diisi atau diperbarui
+        );
+
+        $totalQuestions = Bank::count();
+
+        if ($nomor + 1 > $totalQuestions) {
+            return redirect()->route('soal', $nomor);
+        }
+
+        return redirect()->route('soal', $nomor + 1);
     }
 
     public function bank(Request $request)

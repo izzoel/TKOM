@@ -14925,9 +14925,9 @@ body {
 .menu {
   display: flex;
 }
-.menu .app-brand {
-  width: 100%;
-}
+/* .menu .app-brand {
+  width: 0%;
+} */
 .menu .ps__thumb-y,
 .menu .ps__rail-y {
   width: 0.125rem !important;

@@ -21,6 +21,8 @@
 <!-- Toast JS -->
 <script src="{{ asset('vendor/sneat/js/ui-toasts.js') }}"></script>
 
+<script src="{{ asset('vendor/sweetalert2/js/sweetalert2.js') }}"></script>
+
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -29,6 +31,71 @@
 <script src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.1.8/b-3.2.0/b-html5-3.2.0/r-3.0.3/datatables.min.js"></script>
 
 <script src="{{ asset('vendor/particles/js/particles.min.js') }}"></script>
+
+<script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+@auth
+    @if (auth()->user()->nama != 'admin')
+        <script>
+            if (window.location.href.includes('soal')) {
+                timer();
+            }
+
+            function timer() {
+                $(document).ready(function() {
+                    // Tetapkan waktu durasi (menit)
+                    var durasi = 100;
+                    var countDownTime = localStorage.getItem('countDownTime') || (new Date().getTime() + durasi * 60 * 1000);
+                    localStorage.setItem('countDownTime', countDownTime);
+
+                    $('#countdown').countdown(countDownTime, function(event) {
+                        var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+                        var formattedTime = totalHours.toString().padStart(2, '0') + ':' +
+                            event.offset.minutes.toString().padStart(2, '0') + ':' +
+                            event.offset.seconds.toString().padStart(2, '0');
+                        $(this).html(formattedTime);
+
+                        if (event.offset.totalSeconds < 5 * 60 && event.offset.totalSeconds >= 0) {
+                            $(this).css("color", "red");
+                            $(this).fadeTo(500, 0).fadeTo(500, 1);
+                        }
+
+                        if (event.offset.totalSeconds <= 0) {
+                            $(this).html("WAKTU HABIS");
+                            localStorage.removeItem('countDownTime');
+
+                            let timerInterval;
+                            Swal.fire({
+                                title: "Ujian Telah Selesai!",
+                                html: "anda akan logout dalam <b></b> detik.",
+                                icon: 'success',
+                                timer: 5000,
+                                timerProgressBar: true,
+                                allowOutsideClick: false,
+                                didOpen: () => {
+
+                                    Swal.showLoading();
+                                    const timer = Swal.getPopup().querySelector("b");
+                                    timerInterval = setInterval(() => {
+                                        timer.textContent = `${Math.ceil(Swal.getTimerLeft() / 1000)}`;
+                                    }, 1000);
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                    window.location.href = "{{ route('logout') }}";
+                                    window.onload = function() {
+                                        window.location.reload();
+                                    }
+                                }
+                            })
+                        }
+                    });
+                });
+            }
+        </script>
+    @endif
+@endauth
 
 @include('auth.scripts.statistics')
 @include('auth.scripts.datatables')
@@ -149,3 +216,9 @@
         });
     </script>
 @endguest
+
+<script>
+    $(document).ready(function() {
+        $("#draggable").draggable();
+    });
+</script>

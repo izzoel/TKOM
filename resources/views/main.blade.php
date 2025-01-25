@@ -27,8 +27,10 @@
         @yield('login')
     @endguest
     @auth
+
         <!-- Layout wrapper -->
         <div class="layout-wrapper layout-content-navbar">
+
             <div class="layout-container">
                 <!-- Menu -->
 
@@ -45,6 +47,7 @@
 
                     <!-- Content wrapper -->
                     <div class="content-wrapper">
+
                         @include('auth.layout.content')
                         {{-- @yield(Route::currentRouteName() ? Str::replace('.', '-', Route::currentRouteName()) : 'content')
                          --}}
