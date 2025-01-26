@@ -61,12 +61,11 @@
                       </button>
                   </a>
 
-                  {{-- <span id="draggable" class="app-brand demo d-flex justify-content-center align-items-center flex-column text-center"
-                      style="width: 100px; height: 100px; background-color: lightblue;">
-                      Kalkulator
-                  </span> --}}
+
+
 
               </div>
+
 
               <div class="mb-3">
 

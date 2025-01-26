@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.calc-container {
+  background: #000000;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  z-index: 18000;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: none;
+}
+
+.calc-input {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.calc-input p {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: end;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin-right: .5rem;
+}
+
+.calc-button {
+  background: #333;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+.calc-button:active,
+.calc-button:focus {
+  filter: brightness(120%);
+}
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+}
+
+.key-zero {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.operations {
+  background-color: #ff9500;
+}
+
+.otherKeys {
+  background-color: #a6a6a6;
+  color: #000000;
+}

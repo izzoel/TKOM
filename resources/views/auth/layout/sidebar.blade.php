@@ -25,6 +25,7 @@
                      </div>
                  @endforeach
              </div>
+
          </div>
 
      </ul>

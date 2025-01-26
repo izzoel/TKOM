@@ -18,6 +18,12 @@
                 width: 100%;
                 height: 100%;
             }
+
+            #calculator-frame {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
         </style>
     @endguest
 </head>
@@ -54,7 +60,7 @@
                     </div>
 
                     <!-- / Content -->
-
+                    @include('auth.layout.kalkulator')
                     <!-- Footer -->
                     <footer class="content-footer footer bg-footer-theme">
                         <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">

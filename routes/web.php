@@ -20,6 +20,7 @@ Route::get('/login', [BankController::class, 'login'])->name('login');
 Route::post('/login', [BankController::class, 'login'])->name('login');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/kalkulator', [BankController::class, 'kalkulator'])->name('kalkulator');
     Route::get('/bank', [BankController::class, 'bank'])->name('bank');
     Route::get('/soal/{nomor}', [BankController::class, 'soal'])->name('soal');
     Route::get('/logout', [BankController::class, 'logout'])->name('logout');

@@ -7,8 +7,17 @@
     <div class="navbar-nav-left d-flex align-items-center" id="navbar-collapse-left">
         <ul class="navbar-nav flex-row align-items-center">
             <li class="nav-item me-3">
-                {{-- <a href="{{ route('login') }}" class="btn btn-sm btn-outline-danger">Kalkulator</a> --}}
+                <a href="" id="kalkulator" class="btn btn-sm btn-outline-info text-nowrap "><i class='bx bx-calculator'></i>
+                    <span class="align-middle">Kalkulator</span>
+                </a>
             </li>
+            <li class="nav-item me-3">
+                <button id="nilai" class="btn btn-sm btn-outline-secondary text-nowrap" disabled>
+                    <i class='bx bx-file'></i>
+                    <span class="align-middle">Nilai Baku</span>
+                </button>
+            </li>
+
             {{-- <li>
                 <a class="nav-link" href="#">Home</a>
             </li>

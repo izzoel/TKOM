@@ -21,7 +21,12 @@
 <!-- Toast JS -->
 <script src="{{ asset('vendor/sneat/js/ui-toasts.js') }}"></script>
 
+<!-- SweetAlert JS -->
 <script src="{{ asset('vendor/sweetalert2/js/sweetalert2.js') }}"></script>
+
+
+<!-- Kalkulator JS -->
+<script src="{{ asset('calculator/script.js') }}"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -93,6 +98,35 @@
                     });
                 });
             }
+            // Muat posisi kalkulator dari localStorage
+            var calcPos = JSON.parse(localStorage.getItem('calculatorPosition'));
+            if (calcPos) {
+                $("#calculator").css({
+                    top: calcPos.top,
+                    left: calcPos.left
+                });
+            }
+
+            // Buat kalkulator bisa di-drag dan simpan posisinya ke localStorage
+            $("#calculator").draggable({
+                stop: function(event, ui) {
+                    var position = ui.position;
+                    localStorage.setItem('calculatorPosition', JSON.stringify(position));
+                }
+            });
+
+            // Muat status tampilan kalkulator dari localStorage
+            if (localStorage.getItem('calculatorVisible') === 'true') {
+                $("#calculator").show();
+            } else {
+                $("#calculator").hide();
+            }
+
+            // Toggle tampilan kalkulator dan simpan status ke localStorage
+            $("#kalkulator").on('click', function() {
+                $("#calculator").toggle();
+                localStorage.setItem('calculatorVisible', $("#calculator").is(':visible'));
+            });
         </script>
     @endif
 @endauth
@@ -216,9 +250,3 @@
         });
     </script>
 @endguest
-
-<script>
-    $(document).ready(function() {
-        $("#draggable").draggable();
-    });
-</script>

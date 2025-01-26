@@ -41,6 +41,12 @@ class BankController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
+
+    public function kalkulator(Request $request)
+    {
+        return view('auth.layout.kalkulator');
+    }
+
     public function soal($nomor)
     {
         if (is_null($nomor)) {
