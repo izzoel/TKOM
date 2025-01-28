@@ -5,20 +5,21 @@
         </a>
     </div>
     <div class="navbar-nav-left d-flex align-items-center" id="navbar-collapse-left">
-        <ul class="navbar-nav flex-row align-items-center">
-            <li class="nav-item me-3">
-                <a href="" id="kalkulator" class="btn btn-sm btn-outline-info text-nowrap "><i class='bx bx-calculator'></i>
-                    <span class="align-middle">Kalkulator</span>
-                </a>
-            </li>
-            <li class="nav-item me-3">
-                <button id="nilai" class="btn btn-sm btn-outline-secondary text-nowrap" disabled>
-                    <i class='bx bx-file'></i>
-                    <span class="align-middle">Nilai Baku</span>
-                </button>
-            </li>
-
-            {{-- <li>
+        @if (auth()->user()->nama != 'admin')
+            <ul class="navbar-nav flex-row align-items-center">
+                <li class="nav-item me-3">
+                    <a href="" id="kalkulator" class="btn btn-sm btn-outline-info text-nowrap "><i class='bx bx-calculator'></i>
+                        <span class="align-middle">Kalkulator</span>
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <button id="nilai" class="btn btn-sm btn-outline-secondary text-nowrap" disabled>
+                        <i class='bx bx-file'></i>
+                        <span class="align-middle">Nilai Baku</span>
+                    </button>
+                </li>
+        @endif
+        {{-- <li>
                 <a class="nav-link" href="#">Home</a>
             </li>
             <div class="text-muted fw-semibold px-2 fs-5"> / </div>
@@ -34,9 +35,9 @@
     </div>
     <div class="navbar-nav-right d-flex align-items-center ms-auto" id="navbar-collapse-right">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <li class="nav-item me-3">
+            {{-- <li class="nav-item me-3">
                 <a href="{{ route('login') }}" class="btn btn-sm btn-outline-danger">Login</a>
-            </li>
+            </li> --}}
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="" data-bs-toggle="dropdown">
@@ -69,7 +70,7 @@
                             <span class="align-middle">My Profile</span>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a class="dropdown-item" href="">
                             <i class="bx bx-credit-card me-2"></i>
                             <span class="align-middle">Riwayat</span>
@@ -79,7 +80,7 @@
                                 </span>
                             @endguest
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>

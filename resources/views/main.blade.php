@@ -54,9 +54,12 @@
                     <!-- Content wrapper -->
                     <div class="content-wrapper">
 
-                        @include('auth.layout.content')
-                        {{-- @yield(Route::currentRouteName() ? Str::replace('.', '-', Route::currentRouteName()) : 'content')
-                         --}}
+                        @if (auth()->user()->nama != 'admin')
+                            @include('auth.layout.content')
+                        @elseif (auth()->user()->nama == 'admin')
+                            {{-- @yield('admin') --}}
+                            @yield(Route::currentRouteName() ? Str::replace('.', '-', Route::currentRouteName()) : 'content')
+                        @endif
                     </div>
 
                     <!-- / Content -->

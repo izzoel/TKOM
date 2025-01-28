@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\BankController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BankController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/soal/{nomor}', [BankController::class, 'soal'])->name('soal');
     Route::get('/logout', [BankController::class, 'logout'])->name('logout');
     Route::get('/jawab/{nomor}/{jawab}', [BankController::class, 'jawab'])->name('jawab');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::get('/admin/sesi', [AdminController::class, 'sesi'])->name('sesi');
+    Route::get('/admin/ujian', [AdminController::class, 'ujian'])->name('ujian');
 });

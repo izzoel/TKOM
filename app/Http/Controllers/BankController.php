@@ -27,13 +27,14 @@ class BankController extends Controller
     {
         $credentials = $request->only('nim', 'password');
         if (Auth::attempt($credentials)) {
-            // return response()->json(['success' => true, 'message' => 'Sukses']);
-            return  redirect()->route('soal', 1);
+            if (Auth::user()->nama == 'admin') {
+                return  redirect()->route('admin');
+            } else {
+                return  redirect()->route('soal', 1);
+            }
         } else {
             return  view('auth.layout.login');
-            // response()->json(['success' => false, 'message' => 'Gagal']);
         }
-        // return view('auth.layout.login');
     }
 
     public function logout(Request $request)
