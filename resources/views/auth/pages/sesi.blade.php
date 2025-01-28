@@ -16,38 +16,53 @@
                                             </button>
 
                                             @include('auth.modals.sesi')
+                                            @include('auth.modals.peserta')
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="card-text">
-                                    <table id="depoSatuan" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                    <table id="tabelSesi" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th data-priority="1">Satuan</th>
-                                                <th>Jenis</th>
+                                                <th data-priority="1">Ujian</th>
+                                                <th>Sesi</th>
+                                                <th>Peserta</th>
+                                                <th>Kode</th>
                                                 <th class="col-auto" data-priority="2">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @foreach ($satuans as $satuan)
+
+                                            @foreach ($sesis as $sesi)
                                                 <tr>
-                                                    <td>{{ $loop->iteration }} </td>
-                                                    <td>{{ $satuan->nama }} </td>
-                                                    <td>{{ $satuan->jenis }}</td>
+                                                    <td>{{ $sesi->ujian->nama }} </td>
+                                                    <td>{{ $sesi->sesi }}</td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="U_B_peserta btn btn-xs btn-primary" data-id="#M_U_peserta-{{ $sesi->id }}"
+                                                            {{ $sesi->kode == null ? 'disabled' : '' }}>
+                                                            Peserta
+                                                        </button>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        @if ($sesi->kode == null)
+                                                            <span class="badge rounded-pill bg-danger text-white">Closed</span>
+                                                        @else
+                                                            {{ $sesi->kode }}
+                                                        @endif
+                                                    </td>
                                                     <td class="text-center px-0">
-                                                        <a type="button" class="U_B_satuan text-info" data-id="#M_U_satuan-{{ $satuan->id }}">
+                                                        <a type="button" class="U_B_sesi text-info" data-id="#M_U_sesi-{{ $sesi->id }}">
                                                             <span class="tf-icons bx bx-edit"></span>edit
                                                         </a>
 
                                                         <span class="mx-1">|</span>
 
-                                                        <a type="button" class="D_B_satuan text-danger" data-id="M_D_satuan-{{ $satuan->id }}">
+                                                        <a type="button" class="D_B_sesi text-danger" data-id="M_D_sesi-{{ $sesi->id }}">
                                                             <span class="tf-icons bx bxs-x-square"></span>
                                                         </a>
                                                     </td>
                                                 </tr>
-                                            @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

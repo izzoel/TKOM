@@ -3,7 +3,7 @@
           <div class="col-12 mb-4">
               <div class="card">
                   <div class="card-body">
-                      @foreach ($soals->take(1) as $soal)
+                      {{-- @foreach ($soals->take(1) as $soal)
                           <div class="row">
                               <div class="col-auto">{{ $soal->nomor }}.</div>
                               <div class="col" style="text-align: justify;">{{ $soal->soal }}</div>
@@ -49,11 +49,11 @@
                                   </div>
                               </div>
                           @endforeach
-                      @endforeach
+                      @endforeach --}}
 
                   </div>
               </div>
-
+              {{ session('durasi') }}
               <div class="mb-3">
                   <a href="{{ route('bank') }}" class="">
                       <button type="button" class="btn btn-sm btn-outline-primary">

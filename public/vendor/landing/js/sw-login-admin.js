@@ -29,13 +29,16 @@ $(document).ready(function() {
               title: 'Berhasil!',
               icon: 'success'
             }).then(() => {
-              window.location.href = '/depo'; // Redirect to the dashboard or another page
+              window.location.href = '/admin'; // Redirect to the dashboard or another page
             });
           } else {
             Swal.showValidationMessage(`Password Salah!`);
           }
         } catch (error) {
+          console.log(error); // Log the error to the console or display an error   
+          alert(name);
           Swal.showValidationMessage(`Request failed: ${error}`);
+          
         }
       },
       allowOutsideClick: () => !Swal.isLoading()

@@ -12,7 +12,7 @@
                                     <ul class="nav nav-pills" role="tablist">
                                         <li class="nav-item">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#M_S_ujian">
-                                                ujian
+                                                Ujian
                                             </button>
 
                                             @include('auth.modals.ujian')
@@ -20,34 +20,49 @@
                                     </ul>
                                 </div>
                                 <div class="card-text">
-                                    <table id="depoSatuan" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                    <table id="tabelUjian" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th data-priority="1">Satuan</th>
-                                                <th>Jenis</th>
+                                                <th class="text-start">#</th>
+                                                <th class="text-start"data-priority="1">Ujian</th>
+                                                <th class="text-start">Tanggal</th>
+                                                <th class="text-start">Durasi</th>
+                                                <th class="text-center">Kode</th>
                                                 <th class="col-auto" data-priority="2">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @foreach ($satuans as $satuan)
+                                            @foreach ($ujians as $ujian)
                                                 <tr>
-                                                    <td>{{ $loop->iteration }} </td>
-                                                    <td>{{ $satuan->nama }} </td>
-                                                    <td>{{ $satuan->jenis }}</td>
+                                                    <td class="text-start">{{ $loop->iteration }} </td>
+                                                    <td class="text-start">{{ $ujian->nama }} </td>
+                                                    <td class="text-start">{{ $ujian->tanggal }}</td>
+                                                    <td class="text-start">{{ $ujian->durasi }} Menit</td>
+                                                    <td class="text-center" id="genKode-{{ $ujian->id }}">
+                                                        @if ($ujian->kode == null)
+                                                            <a href="{{ route('generate', $ujian->id) }}" class="btn btn-xs btn-secondary">
+                                                                Generate
+                                                            </a>
+                                                        @else
+                                                            {{ $ujian->kode }}
+                                                            <a href="{{ route('close', $ujian->id) }}" class="btn btn-xs btn-danger">
+                                                                Close
+                                                            </a>
+                                                        @endif
+                                                    </td>
                                                     <td class="text-center px-0">
-                                                        <a type="button" class="U_B_satuan text-info" data-id="#M_U_satuan-{{ $satuan->id }}">
+                                                        <a type="button" class="U_B_ujian text-info" data-id="#M_U_ujian-{{ $ujian->id }}">
                                                             <span class="tf-icons bx bx-edit"></span>edit
                                                         </a>
 
                                                         <span class="mx-1">|</span>
 
-                                                        <a type="button" class="D_B_satuan text-danger" data-id="M_D_satuan-{{ $satuan->id }}">
+                                                        <a type="button" class="D_B_ujian text-danger" data-id="M_D_ujian-{{ $ujian->id }}">
                                                             <span class="tf-icons bx bxs-x-square"></span>
                                                         </a>
                                                     </td>
                                                 </tr>
-                                            @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

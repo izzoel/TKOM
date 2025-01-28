@@ -12,30 +12,25 @@
             </div>
             <div class="modal-body">
                 <div class="nav-align-top mb-4">
-                    <form action="" method="POST">
+                    <form action="{{ route('sesi_store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label" for="ujian">Ujian</label><span class="text-danger">*</span></label>
                             <select class="form-select" id="ujian" name="ujian" required>
                                 <option value="" class="text-muted" selected disabled>-- Pilih --</option>
-                                {{-- @foreach ($ujians as $ujian)
-                                    <option value="{{ $ujian->nama }}">{{ $ujian->nama }}</option>
-                                @endforeach --}}
+                                @foreach ($ujians as $ujian)
+                                    <option value="{{ $ujian->id }}-{{ $ujian->kode }}">{{ $ujian->nama }}</option>
+                                @endforeach
                             </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="sesi">sesi<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="sesi" name="sesi" placeholder="demo" required />
                         </div>
                         {{-- <div class="mb-3">
-                            <label class="form-label" for="nama">sesi<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="gr" required />
+                            <label class="form-label" for="peserta">peserta<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="peserta" name="peserta" placeholder="demo" required />
                         </div> --}}
-                        <div class="mb-3">
-                            <label class="form-label" for="jenis">Jenis<span class="text-danger">*</span></label>
-                            <select class="form-select" id="jenis" name="jenis" required>
-                                <option value="" class="text-muted" selected disabled>-- Pilih --</option>
-                                <option value="alat">Alat</option>
-                                <option value="cair">Cair</option>
-                                <option value="padat">Padat</option>
-                            </select>
-                        </div>
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
@@ -61,18 +56,22 @@
                             @csrf
                             @method('PUT')
                             <div class="mb-3">
-                                <label class="form-label" for="U_nama">Nama sesi<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="U_nama" name="nama" placeholder="gr" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="U_jenis">Jenis<span class="text-danger">*</span></label>
-                                <select class="form-select" id="U_jenis" name="jenis" required>
+                                <label class="form-label" for="U_ujian">Ujian</label><span class="text-danger">*</span></label>
+                                <select class="form-select" id="U_ujian" name="ujian" required>
                                     <option value="" class="text-muted" selected disabled>-- Pilih --</option>
-                                    <option value="alat">Alat</option>
-                                    <option value="cair">Cair</option>
-                                    <option value="padat">Padat</option>
+                                    @foreach ($ujians as $ujian)
+                                        <option value="{{ $ujian->id }}-{{ $ujian->kode }}">{{ $ujian->nama }}</option>
+                                    @endforeach
                                 </select>
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="U_sesi">sesi<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="U_sesi" name="sesi" placeholder="demo" required />
+                            </div>
+                            {{-- <div class="mb-3">
+                                <label class="form-label" for="U_peserta">peserta<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="U_peserta" name="peserta" placeholder="demo" required />
+                            </div> --}}
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
@@ -106,11 +105,10 @@
                 <form id="D_route" action="" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="hidden" name="jenis" value="sesi">
+                    {{-- <input type="hidden" name="jenis" value="sesi"> --}}
                     <button type="submit" class="btn btn-danger">Hapus</button>
                 </form>
             </div>
         </div>
     </div>
-
 </div>

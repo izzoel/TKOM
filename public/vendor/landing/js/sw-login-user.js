@@ -3,12 +3,9 @@ $(document).ready(function() {
     event.preventDefault(); // Prevent the default form submission behavior
 
     Swal.fire({
-      title: "Isi Logbook",
-      html: '<input type="text" id="username" class="swal2-input" placeholder="username">' +
-            '<input type="password" id="password" class="swal2-input" placeholder="Password">' +'<div class="swal2-radio">' +
-            '<label><input type="radio" name="keperluan" value="Praktikum" checked> Praktikum</label>' +
-            '<label><input type="radio" name="keperluan" value="Penelitian"> Penelitian</label>' +
-            '</div>',
+      title: "Isi Form dibawah ini",
+      html: '<input type="text" id="username" class="swal2-input" placeholder="nomor peserta">' +
+            '<input type="password" id="password" class="swal2-input" placeholder="kode">',
       showCancelButton: true,
       confirmButtonText: "Login",
       showLoaderOnConfirm: true,

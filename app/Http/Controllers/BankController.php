@@ -6,6 +6,8 @@ use DOMXPath;
 use DOMDocument;
 use App\Models\Bank;
 use App\Models\Jawab;
+use App\Models\Ujian;
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,31 +18,24 @@ class BankController extends Controller
      */
     public function index()
     {
-        if (auth()->guest()) {
-            return redirect()->route('login');
-        }
-        // $banks = Bank::all();
-        // return view('main', compact('banks'));
+        return  view('guest.landing');
     }
 
     public function login(Request $request)
     {
-        $credentials = $request->only('nim', 'password');
+        $credentials = $request->only('name', 'password');
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->nama == 'admin') {
-                return  redirect()->route('admin');
-            } else {
-                return  redirect()->route('soal', 1);
-            }
+            return response()->json(['success' => true, 'message' => 'Sukses']);
         } else {
-            return  view('auth.layout.login');
+            return response()->json(['success' => false, 'message' => 'Gagal']);
         }
     }
+
 
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('landing');
     }
 
     public function kalkulator(Request $request)

@@ -28,6 +28,9 @@
 <!-- Kalkulator JS -->
 <script src="{{ asset('calculator/script.js') }}"></script>
 
+<script src="{{ asset('vendor/landing/js/sw-login-admin.js') }}"></script>
+<script src="{{ asset('vendor/landing/js/sw-login-user.js') }}"></script>
+
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -40,6 +43,8 @@
 <script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
+
+
 @auth
     @if (auth()->user()->nama != 'admin')
         <script>
@@ -50,9 +55,11 @@
             function timer() {
                 $(document).ready(function() {
                     // Tetapkan waktu durasi (menit)
-                    var durasi = 100;
+
+                    var durasi = @js(session('durasi') !== 'undefined') ? @js(session('durasi')) : 1;
                     var countDownTime = localStorage.getItem('countDownTime') || (new Date().getTime() + durasi * 60 * 1000);
                     localStorage.setItem('countDownTime', countDownTime);
+
 
                     $('#countdown').countdown(countDownTime, function(event) {
                         var totalHours = event.offset.totalDays * 24 + event.offset.hours;
@@ -131,7 +138,7 @@
     @endif
 @endauth
 
-@include('auth.scripts.statistics')
+{{-- @include('auth.scripts.statistics') --}}
 @include('auth.scripts.datatables')
 @include('auth.scripts.toasts')
 @include('auth.scripts.modals')

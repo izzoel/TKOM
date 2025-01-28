@@ -11,6 +11,7 @@
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
+                overflow: hidden;
             }
 
             #particles-js {
@@ -23,6 +24,13 @@
                 width: 100%;
                 height: 100%;
                 border: none;
+            }
+
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                overflow: hidden;
             }
         </style>
     @endguest
@@ -54,12 +62,12 @@
                     <!-- Content wrapper -->
                     <div class="content-wrapper">
 
-                        @if (auth()->user()->nama != 'admin')
+                        {{-- @if (auth()->user()->nama != 'admin')
                             @include('auth.layout.content')
-                        @elseif (auth()->user()->nama == 'admin')
-                            {{-- @yield('admin') --}}
-                            @yield(Route::currentRouteName() ? Str::replace('.', '-', Route::currentRouteName()) : 'content')
-                        @endif
+                        @elseif (auth()->user()->nama == 'admin') --}}
+                        {{-- @yield('admin') --}}
+                        @yield(Route::currentRouteName() ? Str::replace('.', '-', Route::currentRouteName()) : 'content')
+                        {{-- @endif --}}
                     </div>
 
                     <!-- / Content -->

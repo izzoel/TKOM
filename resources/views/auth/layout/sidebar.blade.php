@@ -1,7 +1,7 @@
  {{-- <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);"> --}}
  <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
 
-     @if (Auth::user()->nama == 'admin')
+     @if (Auth::user())
          <div class="app-brand demo">
              <a href="" class="app-brand-link">
                  <span class="app-brand-logo demo">
@@ -43,7 +43,12 @@
                  <span class="menu-header-text">Menu Utama</span>
              </li>
              <!-- Menu Utama -->
-
+             <li class="menu-item {{ request()->routeIs('ujian') ? 'active' : '' }}"">
+                 <a href="{{ route('ujian') }}" class="menu-link">
+                     <i class="menu-icon tf-icons bx bx-time-five"></i>
+                     <div data-i18n="Settings">Ujian</div>
+                 </a>
+             </li>
              <li class="menu-item {{ request()->routeIs('sesi') ? 'active' : '' }}">
                  <a href="{{ route('sesi') }}" class="menu-link">
                      <i class='menu-icon tf-icons bx bx-test-tube'></i>
@@ -84,7 +89,7 @@
                  </li>
                  <li class="menu-item {{ request()->routeIs('ujian') ? 'active' : '' }}"">
                      <a href="{{ route('ujian') }}" class="menu-link">
-                         <i class="menu-icon tf-icons bx bx-building"></i>
+                         <i class="menu-icon tf-icons bx bx-notepad"></i>
                          <div data-i18n="Settings">Ujian</div>
                      </a>
                  </li>
@@ -107,7 +112,8 @@
              <ul class="menu-inner py-1">
                  <div class="container">
                      <div class="row text-center justify-content-center">
-                         @foreach ($banks as $bank)
+                         {{ auth()->user()->nama }}
+                         {{-- @foreach ($banks as $bank)
                              @php
                                  $terjawab = in_array($bank->nomor, $jawabs) ? 'btn-success' : 'btn-outline-primary';
                              @endphp
@@ -118,7 +124,7 @@
                                      </button>
                                  </a>
                              </div>
-                         @endforeach
+                         @endforeach --}}
                      </div>
                  </div>
              </ul>

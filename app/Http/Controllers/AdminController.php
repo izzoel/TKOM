@@ -2,11 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sesi;
 use App\Models\Admin;
+use App\Models\Ujian;
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+    protected $ujians;
+    protected $sesis;
+    protected $peserta;
+
+    public function __construct(Request $request)
+    {
+        $this->ujians = Ujian::all();
+        $this->sesis = Sesi::all();
+        $this->peserta = Peserta::all();
+    }
     /**
      * Display a listing of the resource.
      */
@@ -17,11 +31,15 @@ class AdminController extends Controller
 
     public function sesi()
     {
-        return view('auth.pages.sesi');
+        $ujians = $this->ujians;
+        $sesis = $this->sesis;
+        $pesertas = $this->peserta;
+        return view('auth.pages.sesi', compact('ujians', 'sesis', 'pesertas'));
     }
     public function ujian()
     {
-        return view('auth.pages.ujian');
+        $ujians = $this->ujians;
+        return view('auth.pages.ujian', compact('ujians'));
     }
 
     /**
