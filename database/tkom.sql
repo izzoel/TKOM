@@ -1,0 +1,766 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.7.33 - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL Version:             10.2.0.5599
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table tkom.banks
+CREATE TABLE IF NOT EXISTS `banks` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nomor` int(11) NOT NULL,
+  `soal` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pilihan` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jawaban` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `teks_gambar` mediumtext COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.banks: ~200 rows (approximately)
+DELETE FROM `banks`;
+/*!40000 ALTER TABLE `banks` DISABLE KEYS */;
+INSERT INTO `banks` (`id`, `nomor`, `soal`, `pilihan`, `jawaban`, `gambar`, `teks_gambar`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'bagian riset dan pengembangan suatu industri  farmasi  melakukan evaluasi formulasi tablet ranitidin.  Hasil evaluasi menunjukkan %  friablitas  tablet  yang diperoleh adalah 1,3 %. hasil menunjukkan tidak memenuhi  persyaratan,  sehingga diambil langkah dengan mengurangi konsentrasi bahan pada formula. apakah  bahan yang dimaksudkan?', '["anti adherent","binder","diluent","disintegrant","lubrican"]', 'D', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(2, 2, 'R&D dari suatu pabrik farmasi ingin  merancang bentuk sediaan tablet  untuk zat aktif aspirin, dengan formula tiap tabletnya sebagai  berikut: Aspirin (40 mesh crystal) 224 mg  Phenacetin 160 mg  Caffein anhydrated 32  mg  Compresible sugar 93,4 mg  sterotex 7,8 mg  Syloid 244 2,8 mg  Evaluasi Granul  menunjukkan data sebagai berikut : nilai sudut diam 37 o ; waktu alir 7 detik; laju alir 100  gram/ 8 detik dan nilai indeks kompresilitas granul yaitu 15%. berdasarkan hasil evaluasi granul  tersebut ingin ditentukan metode pembuatan tablet.  apakah metode yang tepat untuk dipilih?', '["spray drying","slugging","direct compresion","roller compaction","fluid bed granulation"]', 'C', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(3, 3, 'R&D dari suatu pabrik farmasi merancang  bentuk sediaan tablet  dengan suatu zat aktif yang memiliki sifat zat aktif dan eksipien yang  sensitif terhadap panas, lembap, sifat alir dan kompresibiltas yang buruk serta miliki dosis tinggi  dalam sediaan. apakah metode yang tepat pada pembuatan sediaan tersebut?', '["spray drying","slugging","direct compresion","wet granulation","fluid bed granulation"]', 'B', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(4, 4, 'R&D dari suatu pabrik farmasi sedang  merancang bentuk sediaan  tablet untuk natrium diklofenak  yang dapat  terikat 99%  pada protein plasma dan mengalami efek metabolisme lintas pertama sebesar 40-50% dengan waktu paruh  sekitar 1-3 jam. Pada kondisi tersebut obat dapat menyebabkan masalah gastrointestinal, sehingga  peneliti merencakan bentuk sediaan yang memiliki kemampuan khusus dalam menahan pelepasan obat  dilambung . apakah jenis tablet yang dimaksudkan tersebut?', '["salut gula","mukoadhesif","effervescent","salut enterik","bucal"]', 'D', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(5, 5, 'bagian QA dari suatu pabrik farmasi akan  melakukan penyimpanan sampel pertinggal dari sediaan emulsi fenolftalein yang baru selesai di  produksi. Berapa lamakah waktu penyimpanan tersebut setelah penanggalan kadaluarsa obat  tersebut?', '["0,5 tahun","1 tahun","1,5 tahun","2 tahun","3 tahun"]', 'B', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(6, 6, 'bagian QA dari suatu pabrik farmasi akan  melakukan penyimpanan dalam kondisi ruangan (sesuai label) sampai expired  date ditambah 1 tahun  pada suatu sediaan  dari emulsi fenolftalein yang  merupakan  pembanding produk jadi yang berada dipasaran dari tiap betsnya. Apakah kategori  sediaan  tersebut?', '["produk antara","produk ruahan","retained sample","bahan pengemas","bahan baku"]', 'C', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(7, 7, 'Bagian riset dan pengembangan suatu industri  farmasi melakukan pengembangan sediaan tablet ranitidin 150 mg, namun saat proses pencetakkan sediaan  , hasil tablet terjadi capping pada sediaan sehingga dilakukan  pendekatan formulasi untuk  menangani masalah ini adalah dengan meningkatkan konsentrasi salah satu bahan pada formula yaitu  kollidon 30. Apakah fungsi bahan tersebut?', '["Antilekat","Pelicin","Penghancur","Pengikat","Pengisi"]', 'D', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(8, 8, 'bagian riset dan pembangan suatu pabrik farmasi  sedang melakukan pengembangan tablet salut selaput nifedipine 10 mg. namun setelah proses penyalutan  logo pada tablet terttutupi oleh larutan penyalut. apakah kerusakan yang terjadi?', '["bridging","cracking","mottling","peeling","picking"]', 'A', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(9, 9, 'bagian riset dan pengembangan suatu pabrik  farmasi  mengembangkan sediaan krim miconazole dengan menggunakan emulgator berupa tween 80 (HLB  15) dan span 80 (HLB 4,3) dengan konsentrasi total 5 %. pada percobaan pembuatan di buat sebanyak 100  gram, dengan HLB butuh  yaitu 12. berapa perbandingan jumlah tween dan span yang  digunakan?', '["7 : 19","9 : 7","18 : 7","18 : 37","37 : 13"]', 'C', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(10, 10, 'Bagian Riset dan pengembangan  suatu pabrik  farmasi  melakukan pengembangan sediaan quercetin yang bersifat praktis tidak larut air dan  golongan BCS II, sehingga di lakukan pendekatan metode dengan menginkorporasi quarcetin ke  dalam  beta Siklodekstrin untuk meningkatkan kelarutan. apakah metode yang di gunakan  tersebut?', '["Kosolvensi","Kompleksasi","nanopartikel","salting in","Solubilisasi miselar"]', 'B', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(11, 11, 'bagian riset dan pengembangan suatu industri  farmasi mengembangkan sediaan gel piroksikam.  pada formula digunakan carbomer, TEA, propilen  glikol,  propil paraben, metil paraben dan air suling. sediaan diharapkan memiliki konsistensi  dan kelembapan yang cukup, sehingga memerlukan bahan yang dapat berperan untuk menjaga jumlah air  atau menekan laju penguapan air pada sediaan. berdasarkan formula, apakah bahan yang  dimaksudkan?', '["carbomer","metil paraben","Propilen glikol","propil paraben","trietanolamin"]', 'C', '', '', '2025-01-29 01:46:11', '2025-01-29 01:46:11'),
+	(12, 12, 'Pasien datang ke apotek dengan keluhan mata kering. Apoteker menyarankan sediaan  tetes mata minidose (5 mL). sampai kapan sediaan tersebut boleh digunakan ?', '["Hingga expired date sesuai di kemasan","1 x 24 jam setelah dibuka","1 bulan setelah dibuka","10 hari setelah dibuka","2 x 24 jam setelah dibuka"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(13, 13, 'Pasien datang ke apotek untuk menebus resep racikan krim. Berapa lama BUD untuk  sediaan krim jika sudah diracik ?', '["3 hari","7 hari","14 hari","30 hari","45 hari"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(14, 14, 'Suspense amoksisilin diracik di sebuah apotek pada tanggal 25 agustus 2022,  expired date diketahui adalah 2 tahun. Sampai kapan sediaan dapat digunakan ?', '["2 september 2022","2 oktober 2022","2 november 2022","2 desember 2022","2 januari 2023"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(15, 15, 'Industri farmasi ingin memproduksi infus NaCl. Untuk jaminan mutu dilakukan  pengujian kadar NaCL dengan titrasi. Metode titrasi yang dilakukan adalah….', '["Asidimetri","Alkalimetri","Iodometri","Kompleksometri","Argentometri"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(16, 16, 'Industri farmasi ingin memproduksi sediaan antasida yang mengandung magnesium  hidroksida dan aluminium hidroksida. Untuk jaminan mutu dilakukan pengujian kadar logam dengan  titrasi. Metode titrasi yang dilakukan adalah…', '["Pengendapan","Asam basa","Kompleksometri","Redoks","Iodometri"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(17, 17, 'Dilakukan Analisa lidokain dengan HPLC. Diperoleh luas daerah bawah kurva  26.400. luas bawah kurva larutan standar lidokain 26.000 dengan konsentrasi 10  µg/mL dengan pengenceran 200 kali. Berapa jumlah lidokain yang dianalisa  (µg/mL)', '["2030","2015","2010","10,30","10,15"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(18, 18, 'Tablet asam mefenamat dianalisa menggunakan KCKT dengan kolom L1 (C18) dan fase  gerak dapar fosfat, asetonitril dan methanol. Prinsip pemisahannya ?', '["Adbosrpsi terbalik","Absorpsi normal","Partisi normal","Partisi terbalik","Adsobrsi ekslusi"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(19, 19, 'Apoteker di industry farmasi membuat tablet candesartan 8 mg dengan metode  granulasi basah. Pada saat proses pengeringan dilakukan IPC dengan menimbang seksama 10 g granul  basah kemudian dikeringkan pada suhu 70 o C. didapat hasil konstan bobot granul setelah  dikeringkan sebesar 8,9 gram. Berapakah persen LOD dari granul yang dihasilkan ?', '["11","0,11","12,35","0,12","11,35"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(20, 20, 'Suatu laboratorium di industri farmasi sedang melakukan pengecekan kadar pada  salah satu obat pereda nyeri yaitu indometasin menggunakan KCKT dan didapatkan kurva kalibrasi yaitu,  y = 65013x + 21647 dimana y adalah luas area dan c adalah mcg/mL. diketahui SD adalah 4987. Berapakah  nilai batas kuantiti dari pengujian tersebut ?', '["0,76","0,67","0,23","0,32","0,36"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(21, 21, 'Bagian Gudang menerima bahan baku zat aktif sebanyak 9 wadah. Setiap wadah  berberat 5 kg. bagian QC akan melakukan pengujian. Berapa banyak sampel yang diambil untuk  diuji?', '["2","3","4","5","9"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(22, 22, 'Terdapat dua puncak HPLC denganw aktu retensi 6 dan 9 menit dengan lebar  masing-masing puncak 1,5 dan 2,5 menit. Berapa resolusinya ?', '["1","1,5","2","2,5","3"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(23, 23, 'Industri farmasi memproduksi klotrimazol krim dalam tube 5 gram. Bahan aktif 100  mg dalam tiap kemasan. Berapa kandungan zat aktif tersebut dalam tiap kemasan jika dihitung dalam  %?', '["0,5","1","1,5","2","2,5"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(24, 24, 'Analisis ondasentron menggunakan KCKT. Luas area puncak larutan ondansentron  26.400 dan larutan standar 24.000. konsentrasi larutan standar yang digunakan 10  µg/mL dengan pengenceran 200 kali. Maka kadar (mg) dari ondansentron dalam larutan  uji adalah ?', '["1,1","2,2","3,3","4,4","5,5"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(25, 25, 'Seorang farmasis akan menganalisa meloksikam dalam supositoria menggunakan  spektrofotometer UV-Vis. Absorpsi sampel 0,2 dan absorpsi larutan standar 0,5 dalam konsentrasi  10  µg/mL. sebelum pengukuran, perlakuan pada 2 suppositoria diekstraksi  dalam 100 mL pelarut dengan pengenceran 100 kali. Berapa kadar meloksikam (mg) dalam 1 buah  suppositoria?', '["15","20","25","30","35"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(26, 26, 'Suatu industri  farmasi melakukan perhitungan kebutuhan bahan baku sebanyak 60.000 unit per tahun dengan biaya untuk  pemesanan sebanyak Rp 200 tiap kali order serta biaya penyimpanan sebesar Rp 0,5 per unit per tahun.  Dalam 1 tahun dianggap 298 hari kerja, dengan lead time 10 hari dan EOQ sebesar 6.928 unit. Berapa  frekuensi pemesanan yang dilakukan oleh industri farmasi tersebut?', '["3 kali","6 kali","9 kali","12 kali","15 kali"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(27, 27, 'Seorang apoteker di  suatu apotek ingin melakukan stok opname dengan diketahui persediaan apotek pada awal tahun Rp  100.000.000. Pembelian selama Januari Rp 1.200.000.000. Penjualan selama bulan Januari Rp 90.000.000.  Laba kotor 20%. Nilai persediaan akhirnya adalah?', '["Rp 1.125.000.000","Rp 1.228.000.000","Rp 1.325.000.000","Rp 1.428.000.000","Rp 1.525.000.000"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(28, 28, 'Seorang apoteker di  apotek menghitung rata-rata penggunaan Metformin 500 mg 200 tablet per hari. Tidak menggunakan system  safety stock. Waktu tunggu 2 hari, berapakah stok minimumnya?', '["100","200","300","400","500"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(29, 29, 'Berdasarkan  Peraturan Menteri Kesehatan nomor 72 tahun 2016, standar pelayanan kefarmasian di rs meliputi standar  pengelolaan sediaan farmasi dan pelayanan farmasi klinik. Apakah salah satu kegiatan seorang apoteker  di Rumah Sakit dalam hal pelayanan farmasi klinik?', '["Melakukan evaluasi penggunaan obat","Melakukan pemesanan obat narkotika","Melakukan pelayanan home pharmacy care","Perencanaan kebutuhan farmasi","Pemusnahan dan penarikan obat kedaluwarsa"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(30, 30, 'Sebuah rumah sakit  baru saja dibangun di wilayah pelosok. Apoteker baru akanmemulai merencanakan pengadaan namun  tidak memiliki data apapun. Metodeapakah yang tepat untuk digunakan dalam perencanaan  tersebut?', '["Epidemiologi","Konsumsi","Konsinyasi","Morbiditas","Proxy consumption"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(31, 31, 'Penggunaan obat  golongan narkotika dan psikotropika harus dilakukan pemantauandan pengendalian. Salah satu  pemantauan dan pengendalian yang dilakukandiantaranya melalui pelaporan SIPNAP. Kapan pelaporan  tersebut dilakukan?', '["Setiap 1 bulan sekali maksimal tanggal 10","Setiap 1 tahun sekali pada awal tahun","Setiap 1 bulan sekali minimal tanggal 10","Setiap 1 bulan sekali pada tanggal 1","Setiap 1 tahun sekali pada akhir tahun"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(32, 32, 'Seorang apoteker di  puskesmas sedang merencanakan pengadaan vaksin campak.Vaksin ini hanya digunakan pada saat  dibutuhkan dan diketahui harganya cukupmahal. Metode pengadaan apakah yang sebaiknya  digunakan?', '["Tender terbuka","Pembelian langsung","Just in time","Cash on Delivery","Konsinyasi"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(33, 33, 'Gudang farmasi  rumah sakit sedang melakukan penyimpanan sediaan yang barudatang dari PBF. Penyimpanan obat  dikelompokkan sesuai jenisnya, salah satunyaadalah kelompok obat high alert. Manakah dibawah ini  yang termasuk obat high alert?', '["NaCl 0,9%","Oksitosin","Propanolol","Dextrose 5%","Akarbosa"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(34, 34, 'Seorang apoteker di  apotek ingin memesan sediaan injeksi seftriakson sebanyak 10 vial dengan harga Rp. 50.000/vial  (exclude tax). Berapakah harga yang harus dibayar apoteker tersebut?', '["Rp. 450.000","Rp. 500.000","Rp. 550.000","Rp. 600.000","Rp. 650.000"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(35, 35, 'Seorang apoteker di  suatu apotek GEMBIRA membuat laporan keuangan dalam tahun 2022 (1 tahun dianggap 365 hari) sebagai  berikut :  ·      Biaya  operasional Rp 52.000.000 ·      Biaya  penjualan Rp 76.000.000  ·      Biaya embalase  pelayanan dalam 1 hari penjualan Rp 255.000.  Berapakah nilai BEP  pelayanan dari apotek tersebut?', '["3,04","3,34","2,04","2,24","1,14"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(36, 36, 'Apoteker penanggung  jawab disebuah apotek akan melakukan pemesanan obat ke PBF. Apabila jumlah pemakaian obat rata-rata  perminggu sebanyak 85 box dengan waktu tunggu 4 minggu dan stok pengaman 40% dari kebutuhan selama  lead time. Berapakah jumlah minimum order?', '["857 unit","750 unit","675 unit","560 unit","476 unit"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(37, 37, 'Seorang apoteker di  apotek ingin melakukan pengadaan injeksi Omeprazol sebanyak 4 dus @25 vial. Satu dus harganya Rp  1.500.000 (include). Berapa harga penjualan injeksi Omeprazol tersebut per vial bila apotek mengambil  keuntungan 10%?', '["Rp. 16.500","Rp. 15.000","Rp. 60.000","Rp. 66.000","Rp. 66.500"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(38, 38, 'Seorang apoteker  rumah sakit  menghitung kebutuhan infus RA sebanyak 1000 per bulan infus setiap 3 bulan dengan  harga beli 15.000/satuan. Infus dibeli dari Jakarta dengan lead time 15 hari. Diketahui sisa stok  yang ada di gudang RS adalah 50 infus. Berapakah infus yang harus dibeli dalam setiap periode  pembelian jika diketahui 1 bulan adalah 30 hari?', '["3340 infus","3350 infus","3540 infus","3430 infus","3450 infus"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(39, 39, 'Sebuah apotek  mendapatkan laba kotor sebesar Rp 200.000.000. Diketahui pengeluaran untuk usaha sebesar Rp  145.000.000 dan modal pemilik awal sebesar Rp 105.000.000. Berapakah ROE apotek  tersebut?', '["20,0%","52,3%","65,5%","13,7%","19,0%"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(40, 40, 'Sebuah apotek  memiliki hasil penjualan sebesar Rp. 420.000.000 pada tahun 2022. Diketahui investasi apotek tersebut  120.000.000. Berapa nilai pay back periode apotek tersebut?', '["0,2","0,4","0,28","2,4","3,5"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(41, 41, 'Apotek LULUS  APOTEKER akan melakukan pengadaan obat cacing combantrine.Diketahui obat tersebut dijual oleh PBF  dengan harga Rp. 12.300 per botol belumtermasuk ppn. Apotek menginginkan keuntungan 25% untuk  ethical dan 10% untukOTC. Maka, berapakah harga jual obat tersebut per botol?', '["Rp 14.883","Rp 13.530","Rp 16.912","Rp 15.375","Rp 12.488"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(42, 42, 'Seorang apoteker  penanggung jawab apotek akan melakukan pemesanan obatsebagai berikut, Petidin, Etilmorfin,  Metilfenidat, Diazepam, dan Tramadol. Berapabanyak surat pesanan yang  dibutuhkan?', '["2 SP Narkotik, 1 SP Psikotropik","1 SP Narkotik, 4 SP Psikotropik","2 SP Narkotik, 1 SP Psikotropik, 1 SP Prekursor","1 SP Narkotik, 3 SP Psikotropik, 1 SP OOT","2 SP Narkotik, 1 SP Psikotropik, 1 SP OOT"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(43, 43, 'Suatu instalasi  farmasi rumah sakit menerima bahan-bahan berbahaya untuk keperluanpengobatan dan pengujian.  Sebelum dilakukan penyimpanan, dokumen apa yangdipastikan terlampir pada bahan-bahan berbahaya  tersebut?', '["CoA","MSDS","Sertifikat Halal","Sertifikat Uji","Sertifikat lulus BPOM"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(44, 44, 'Pasien menerima  terapi Siklofosfamid untuk pengobatan kanker. Efek samping apakah yang dapat muncul dari penggunaan  obat tersebut?', '["Kardiomiopati","Cystisis hemoragic","Mielosupresi","Trombositopenia","Hiperurisemia"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(45, 45, 'Pasien berumur 30  tahun datang ke Rumah Sakit mengeluh perrutnya yang terasa kembung dan mual. Di rumah sakit dilakukan  pemeriksaan endoskopi dan kultur pada pasien tersebut, dan dari hasil kultur positif terdapat bakteri  H. Pylori. Apakah obat yang tepat diberikan pada pasien tersebut', '["Antagonis reseptor H2 + antasida","Analog prostaglandin + antibiotic","PPI + antibiotik","PPI + antivirus","Antiplatelet + PPI"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(46, 46, 'Suatu obat memiliki  nilai Ka 0,046. Berapa waktu paruh (T1/2) obat tersebut ?', '["15","16","17","18","19"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(47, 47, 'Seorang pasien  wanita 60 tahun dengan BB 50 kg. Pasien menderita hipertensi sejak 10 tahun yang lalu. Diketahui  kadar serum kreatinin 3 mg/dl, untuk koreksi dosis maka diperlukan klirens kreatinin. Berapakah nilai  klirens kreatinin (CrCl) pasien tersebut?', '["14,501 ml\\/menit","14,522 ml\\/menit","15,503 ml\\/menit","15,74 ml\\/menit","16,504 ml\\/menit"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(48, 48, 'Pasien berusia 35  tahun, sedang hamil 8 minggu, mengidap HIV (+) , Antiretrovial apa yang harus dihindari  ?', '["Stavudin","Efavirens","Zidofudin","Nevirapin","Tenovirapir"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(49, 49, 'Seorang laki-laki  berusia 60 tahun dengan BB 45 kg didiagnosis dokter menderita infeksi MRSA. Pasien memperoleh terapi  Vankomisin secara infus intermitten. Dokter meminta Apoteker untuk melakukan penyusunan dosis muatan.  Diketahui Vd pasien 20 L. Target awal yang akan dituju sebesar 40mg/L. Berapakah Dosis Muatan obat  tersebut ?', '["400 mg","500 mg","600 mg","700 mg","800 mg"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(50, 50, 'Seorang dokter  menuliskan resep berisi ambroksol 15 mg/5ml 3x1/4 sendok teh. Pasien minta dalam bentuk tetes atau  drop. Sediaan yang tersedia adalah 7,5 mg/ml. Berapa tetes per sekali pakai? (1 ml = 20  tetes)', '["30 tetes","20 tetes","15 tetes","25 tetes","10 tetes"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(51, 51, 'Seorang laki-laki  berusia 30 tahun datang ke rumah sakit dengan keluhan batuk kronis dan demam yang sudh berlangsung 1  bulan sebelumnya. Berdasarkan hasil  pemeriksaan, pasien tersebut didiagnosa TBC dan diberikan  OAT kategori 1 untuk fase intensif. Berapa lama obat itu akan diminum pada fase  tersebut?', '["1 bulan","2 bulan","3 bulan","4 bulan","5 bulan"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(52, 52, 'Seorang ibu ingin  menebus resep yang isinya terdapat tulisan asam hyaluronat 40% dan syringe 5 mL. Di instalasi Farmasi  Rumah Sakit yang tersedia hanya asam hyaluronat dalam kemasan ampul 3 mL dengan konsentrasi 20%.  Berapakah ampul berikan kepada ibu tersebut?', '["1 ampul","2 ampul","3 ampul","4 ampul","5 ampul"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(53, 53, 'Seorang pria  berusia 30 tahun masuk rumah sakit dengan riwayat penyakit hipertensi, atrial fibrilasi, dan chronic  kidney disease. Obat antihipertensi berikut yang dapat memperlambat penurunan fungsi ginjal  adalah', '["Amlodipine","Verapamil","Furosemida","Valsartan","Spironolakton"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(54, 54, 'Seorang pria 55  tahun mengeluh batuk berdahak dengan lendir berwarna hijau dan terasa sakit ketika batuk. Pasien  didiagnosa menderita CAP. Pasien baru pertama kali terkena CAP dan sebelumnya  pasien?', '["Amoksisilin","Azythromycin","Cefadroxil","Cefixim","Levofloxacin"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(55, 55, 'Pasien wanita  berusia 52 tahun mengalami kenaikan berat badan sekitar 5 kg dalam 1 bulan, tidak tahan dingin,  pusing, lemas, lesu, dan kulit kering. Dokter mendiagnosis bahwa pasien mengalami gangguan tiroid.  Obat apa yang diberikan untuk pasien?', '["Metimazol","PTU","Levotiroksin","Propranolol","Bisoprolol"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(56, 56, 'Pasien wanita  berusia 50 tahun datang ke klinik dengan keluhan nyeri sendi ibu jari kaki. Pasien memiliki riwayat  hipertensi, diabetes, dan dislipedimia. Hasil uji laboratorium menunjukkan kadar asam urat pasien 9  mg/dL. Sekitar sebulan yang lalu, pasien mendapatkan terapi obat kaptopril, HCT, glimepiride,  metformin, dan simvastatin. Apoteker menduga pasien mengalami efek samping obat. Obat apa yang dapat  meningkatkan kadar asam urat pasien?', '["Simvastatin","HCT","Glimepirid","Kaptopril","Metformin"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(57, 57, 'Seorang pria datang  ke apotek untuk membeli obat yang dapat mengobati kulit pada telapak kakinya. Apoteker memberikan  krim yang mengandung asam salisilat. Efek apa yang dihasilkan asam salisilat  tersebut?', '["Antipiretik","Analgetik","Antiplatelet","Keratolitik","Antiinflamasi"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(58, 58, 'Tn D seorang pria  berusia 35 tahun, datang ke rumahsakit dan mengeluhkan rasa tidak nyaman pada telinganya yang sering  berdengung hingga keluarnya cairan dari telinga, Tn D juga mengalami penurunan kemampuan mendengar.  Apakah terapi antibiotik yang tepat diberikan untu Tn D?', '["Gentamisin","Ketokonazole","Garamisin","Co-Amoxiclav","Tetrsiklin"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(59, 59, 'Seorang pasien  dengan berat badan 50kg di rawat di RS Borneo Lestari. Dikeahui pasien sebelumnya mengkonsumsi  aminofilin. Dari data tersebut diketahui laju eliminasinya 0.07/jam, Vd = 40 L. Dari data sebelumnya  (setelah meminum obat) sisa kadar obat dalam darah 10 mg/L. CPss yg dikehendaki adalah 20 mg/L.  Berapa laju kecepatan infus yang dibutuhkan ?', '["8","18","28","36","46"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(60, 60, 'Seorang pasien  menderita PPOK selama 3 tahun dan mengalami osteoporosis. Terapi PPOK apa yang meningkatkan resiko  osteoporosis ?', '["Salbutamol","Teofilin","Ambroxol","Metilprednisolon","Terbutalin"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(61, 61, 'Diketahui t  1/2  suatu obat adalah 5 jam. Berapakah waktu yang diperlukan agar obat tersebut mencapai kadar  Css 90% ? (128)', '["7 jam","17 jam","27 jam","8 jam","18 jam"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(62, 62, 'Seorang bapak  datang ke dokter dengan keluhan nyeri pada persendian. Hasil cek lab asam urat menunjukkan kadar asam  urat yang tinggi. Diketahui pasien tersebut saat ini sedang mengonsumsi obat TB. Apoteker mengetahui  bahwa hal ini disebabkan efek samping dari obat TB tersebut. Apa obat TB yang menyebabkan peningkatan  kadar asam urat pasien tersebut? (129)', '["Rifampisin","Etambutol","Isoniazid","Pirazinamid","Kanamisin"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(63, 63, 'Seorang wanita  hamil dengan usia kehamilan 32 minggu dibawa ke IGD dengan  kondisi kejang dan kehilangan  kesadaran. Hasil pemeriksaan menunjukkan tekanan darah 160/100 mmHg dan pemberian labetalol  menunjukkan tidak ada respon baik. Dokter mendiagnosa pasien mengalami eklampsia. Apa obat yang  disarankan untuk penanganan cepat  pada pasien tersebut? (130)', '["Nifedipin long acting","Magnesium sulfat injeksi","Labetalol injeksi","Injeksi diazepam","Injeksi kortikosteroid"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(64, 64, 'Seorang pasien pria  berusia 55 tahun dibawa ke IGD karena kondisi tidak sadarkan diri. Tekanan darah pasien 200/100 mmHg.  Dokter bertanya pada apoteker terkait obat untuk menurunkan tekanan darah pasien tersebut. Apa obat  yang disarankan untuk mengatasi kondisi pasien tersebut? (131)', '["Captopril","Amlodipin","Nifedipin","Nitropruside","Bisoprolol"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(65, 65, 'Seorang wanita  berusia 50 tahun (67 kg) meminum susu yang sudah kadaluarsa. Antidotum yang tepat sebaiknya diberikan  adalah... (133)', '["Arang aktif","NAC","MgSO4","Oralit","Tablet Zn"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(66, 66, 'Seorang wanita  menyusui dengan siklus haid normal berusia 35 tahun datang ke apotek dan berkonsultasi dengan  apoteker terkait penggunaan mini pil yang rutin pasien konsumsi. Pasien lupa minum 1 pil. Sebagai  apoteker, apa informasi yang disampaikan? (134)', '["Minum 1 pil segera dan menggunakan kontrasepsi non hormonal selama 48 jam","Membuang pil yang terlewat","Minum 2 pil sekaligus","Minum 1 pil segera tanpa kontrasepsi tambahan selama 2 hari berikutnya","Menghentikan penggunaan"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(67, 67, 'Dokter meminta  apoteker menyiapkan infus dopamine dengan dosis 2 mcg/kg/menit selama 100 menit. Jika diketahui BB  pasien 80 kg dan sediaan infus dopamine yang tersedia adalah 0,16% b/v. Berapakah volume infus yang  dibutuhkan untuk memberikan total jumlah dopamine yang dibutuhkan? (135)', '["2 mL","4 mL","6 mL","8 mL","10 mL"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(68, 68, 'Seorang Pasien (40  tahun) diketahui mengalami TB-MDR. Hasil pemeriksaan mikrobiologis, pasien masih dinyatakan sensitif  terhadap obat-obat TB lini kedua hingga kelima. Pasien mengalami peningkatan SGOT dan SGPT tiga kali  lipat. Antibiotik apa yang penggunaannya harus hari-hati untuk pasien tersebut?  (136)', '["Kanamisin","Amikasin","Gentamicin","Amoxicillin","Moksifloksasin"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(69, 69, 'R/ Cefat syrup fl  II S 2  dd 1 ½ cthDiketahui Cefat forte syrup mengandung obat dengan konsentrasi 250 mg/5  ml.Berapa mg sediaan sekali minum (138)', '["62,5 mg","125 mg","250 mg","375 mg","500 mg"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(70, 70, 'Seorang lelaki  berumur 65 tahun mengalami nyeri skala 8 setelah mendapatkan serangan infark miokard. Dokter ingin  memberi morfin (5mg) dan meminta anda menghitung dosisnya. Diketahui dosis morfin untuk dewasa  berdasarkan literature adalah 5mg/ml dan dosis untuk lansia adalah ½ dosis dewasa. Berapa dosis  morfin untuk pasien tersebut ? (139)', '["0,125 ml","0,5 ml","0,75 ml","2,5 ml","5 ml"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(71, 71, 'Dirumah sakit  apoteker mendapat permintaan dari dokter larutan injeksi famotidine 25 mg dalam 100 ml larutan  dekstrosa 5%. Berapa ml larutan famotidine yang diperlukan jika yang tersedia adalah 10 mg/ml?  (140)', '["0,5","2","2,5","5","7,5"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(72, 72, 'Seorang bapak  berusia 45 tahun didiagnosis oleh dokter terkena penyakit glaucoma sudut terbuka. Dokter meminta  saran ke apoteker untuk memberikan obat diuretic yang tepat untuk penyakit tersebut. Diuretik yang  bisa digunakan untuk pengobatan pada pasien di atas adalah? (141)', '["Acetazolamide","Spironolakton","Furosemid","Hidrochlortiazid (HCT)","Manitol"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(73, 73, 'Seorang pasien  mengalami otitis media, sebagai apoteker antibiotik yang anda sarankan  adalah…(144)', '["Amoxicillin","Cefixime","Azitromicyn","Cefadroxil","Eritromicin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(74, 74, 'Seorang pria 45  tahun memiliki riwayat DM dan diresepkan Nateglinide 60mg 3 kali sehari. Bagaimana cara minum obat  tersebut? (145)', '["30 menit sebelum makan","15 menit sebelum makan","Bersama suapan pertama","Pada saat makan","30 menit setelah makan"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(75, 75, 'Seorang wanita  berumur 34 tahun didiagnosa kanker payudara, dia merasakan nyeri dengan vas 7. Dokter bertanya kepada  apoteker terkait masalah tersebut. Apa yang anda rekomendasikan? (146)', '["Ketoprofen","Ketorolac","Meloxicam","Tramadol","Morfin"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(76, 76, 'Seorang pria  berusia 22 tahun dengan berat badan 70kg menderita asma dan diverikan injeksi aminofilin. Aminofilin  merupakan obat yang mempunyai indeks terapi sempit, dengan waktu paruh 8 jam den volume distribusi 35  L berapakah nilai clirens dari obat tersebut? (148)', '["0,009 L\\/jam","3,03 L\\/jam","24,55 L\\/jam","48 L\\/jam","50,50 L\\/jam"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(77, 77, 'Seorang pasien  memperoleh injeksi intravena dosis tunggal obat X 300mg dan setelah diinjeksikan, diperoleh  konsentrasi obat tesebut dalam plasma darah adalah 8,2 µg/mL. berapakah volume distribusi obat  tersebut? (149)', '["36,6 L","3,36 L","0,336 L","0,366 L","0,336 L"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(78, 78, 'Seorang wanita  menggunakan salep yang berisi asam retinoat + Benzoil Peroksida untuk mengatasi jerawatnya. Wanita  ini mengkonsuntasikan kepada apoteker terkait penggunaan salep tsb. Bagaimana frekuensi evaluasi  penggunaan salep tersebut pada kondisi pasien? (', '["5 hari","7 hari","2-4 minggu","3-6 minggu","6-8 minggu"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(79, 79, 'Seorang ibu sedang  mengandung dengan usia kandungan 21 minggu datang ke Rumah Sakit karena cemas setelah suaminya izin  dinas ke luar kota. Ibu tersebut punya trauma karena mantan suaminya dahulu meninggal dunia saat  perjalanan dinas ke luar kota. Kemudian dokter bertanya terkait apa yang sebaiknya diberikan, apa  yang anda rekomendasikan sebagai apoteker? (151)', '["Citalopram","Amitriptilin","Benzodiazepin","Clonazepam","Duloksetin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(80, 80, 'Seorang perempuan  berumur 70 tahun dengan BB 65 kg dengan tinggi badan 160 cm, dilakukan tes terhadap darahnya  menghasilkan serum kreatinin 1,5 mg/dL. Berapakah GFR pasien tersebut? (154)', '["42,13","35,81","48,61","41,32","38,51"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(81, 81, 'Seorang pasien  laki-laki berusia 55 tahun didiagnosa hyperlipidemia, hipertensi, dan diabetes meleitus. Pasien  tersebut menerima terapi amlodipine, glimepiride, captopril, metformin, dan simvastatin selama 14  hari bulan ini. Pasien tersebut menjalanu pemeriksaan rutin untuk memonitor terapinya dan didapatkan  hasil pemeriksaan kadar kreatinin kinase 600 IU/L. apakah obat yang menyababkan kondisi tersebut?  (155)', '["Amlodipine","Glimepiride","Captopril","Metformin","Simvastatin"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(82, 82, 'Seorang pasien CKD  usia 67 tahun mengalami komplikasi hiperfosfatemia. Pasien diberikan tablet Ca karbonat untuk  menangani komplikasi tersebut. Apoteker hendak memberikan konseling terkait penggunaan tablet Ca  karbonat. Bagaimana cara minum Ca karbonat yang tepat.. (160)', '["Saat perut kosong telan utuh","Dikunyah bersama makanan","Saat perut kosong telan utuh dan tegak","Harus ditelan utuh dengan segelas air","Dikunyah saat perut kosong"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(83, 83, 'Seorang pasien usia  30 tahun datang ke dokter dengan keluhan mual, nafsu makan menurun, lesu dan diare. Dilakukan  pemeriksaan feses dan ditemukan telur Ascaris lumbricoides. Dokter meminta rekomendasi obat kepada  apoteker, obat apakah yang tepat? (162)', '["Dietilkarbamazin","Pirazikuantel","Mebendazol","Pirantel pamoat","Ivermektin"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(84, 84, 'Seorang pasien  laki-laki berusia 52 tahun (BB 53 kg, TB 162 cm) didiagnosa nengalami diabetes dengan penurunan   fungsi ginjal. Hasil lab menunjukkan kadar gds 200 mg/dL dan serum kreatinin 1,2 mg/dL. Berapakah  nilai Crcl tersebut? (163)', '["5,398 ml\\/min","89,35 ml\\/min","8,935 ml\\/min","53,98 ml\\/min","9,835 ml\\/min"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(85, 85, 'Seorang pasien  penderita asma kronis diperiksa tekanan darahnya, hasil pemeriksaan menunjukan nilai tekanan darahnya  adalah 150/100 mmHg. Kondisi asma pasien saat ini dalam keadaan terkontrol dengan menggunakan  salbutamol. Obat hipertensi apakah yang kontraindikasi untuk pasien tersebut ?  (166)', '["Kaptopril","Amlodipin","Furosemid","Propanolol","HCT"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(86, 86, 'Seorang pasien  berumur 24 tahun datang ke klinik dengan keluhan nyeri saat menelan, pusing, demam (40°C) dan  muntah dua kjkali. Hasil laboratorium mmenunjukan leukositosis dan neutrofilia. Dokter mendiagnosis  pasien menderita akut faringitis. Diketahui pasien alergi penisilin. Antibiotik apiakah yang tepat  diberikan untuk pasien tersebut ? (167)', '["Sefadroksil","Ampisilin","Metronidazole","Sulfametoksazol","Ciprofloxacin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(87, 87, 'Pasien kanker  nasofaring (BB 50 kg, TB 157 cm) mendapatkan terapi carboplatin dengan target AUC 5 mg.min/mL.  berdasarkan hasil perhitungan, GFR pasien adalah 96 mL/min. Berapakah dosis carboplatin  untuk pasien tersebut ? (168)', '["600 mg","480 mg","505 mg","605 mg","709 mg"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(88, 88, 'Seorang wanita  berusia 50 tahun dengan BB 55 kg dan TB 168 cm didiagnosa oleh dokter menderita infeksi saluran kemih  dan mendapatkan terapi injeksi amikasin (250mg/ml) tiap 12 jam. Hasil pemeriksaan laboratorium pasien  menunjukkan serum kreatinin pasien sebesar 2,2 mg/dL. Klirens kreatinin normal pasien adalah 100  ml/menit. Berapakah kapasitas ginjal pasien klirens kreatinin dihitung dengan metode Cockroach and  Goult ? (171)', '["29,21 ml\\/Menit","29,23 ml\\/Menit","21,29 ml\\/Menit","21,23 ml\\/Menit","21,21 ml\\/Menit"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(89, 89, 'Seorang pasien  datang ke apotek untuk membeli asam mefenamat. Sesuai DOWA berapa jumlah asam mefenamat yang boleh  diberikan? (173)', '["10","15","20","25","30"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(90, 90, 'Pasien datang ke  Rumah sakit dengan diagnosa TBC, saat ini terdiagnosa HIV dengan CD4 38. kapan pemberian obat ARV  yang tepat? (176)', '["2 minggu setelah pengobatan OAT","4 minggu setelah pengobatan OAT","5 minggu setelah pengobatan OAT","8 minggu setelah pengobatan OAT","12 minggu setelah pengobatan OAT"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(91, 91, 'Seorang pria  melakukan perjalanan dinas ke daerah endemic malaria, sebelum melakukan perjalanan pria tersebut  dianjurkan meminum profilaksis malaria. Dokter memberikan hidroksiklorokuin. Sebagai apoteker, apa  yang perlu anda sampaikan? (178)', '["Digunakan mulai 2 minggu sebelum terpapar","Digunakan mulai 2 minggu sebelum terpapar, lanjut 4 minggu setelah kembali","Digunakan mulai 1 minggu sebelum terpapar dan selama di daerah endemic","Digunakan ketika 30 menit sebelum sampai daerh endemic","Digunakan 30 menit sebelum berangkat kedaerah endemic"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(92, 92, 'Seorang ibu membawa  anaknya ke dokter karena mengeluhkan mual, nyeri perut dan gatal pada kakinya. Kemudian dokter  menyarankan pengujian terhadap feses dan didapatkan hasil positif mengandung larva cacing tambang.  Bagaimana saran pengobatan yang anda berikan selaku apoteker? (179)', '["Mebendazol dosis tunggal 400 mg","Mebendazol dosis tunggal 150 mg","Pirantel pamoat dosis tunggal 250 mg","Mebendazol dosis tunggal 100 mg","Pirantel pamoat dosis tunggal 100 mg"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(93, 93, 'Seorang ibu  mengalami hipotensi dan brakikardi akibat toksisitas beta bloker. Terapi apa yang harus diberikan?  (185)', '["Epinefrin","Dopamine","Flumazenil","Glukagon","Nalokson"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(94, 94, 'Seorang perempuan  usia 68 tahun didiagnosa menderita  rheumatoid artritis dan diberikan obat DMARD oleh dokter.  Akan tetapi, dokter menyarankan untuk melakukan pemeriksaan mata secara berkala untuk deteksi dini  toksisitas retina. Dokter kemudian bertanya kepada apoteker obat apa yang seharusnya diberikan kepada  pasien tersebut? (193)', '["Metotreksat","Sulfasalazine","Leflunomid","Minosiklin","Hidroksiklorokuin"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(95, 95, 'Seorang wanita 23 tahun datang ke klinik untuk  memeriksakan kondisi yang dialami. Dokter mendiagnosa bahwa pasien terkena asma diberikan pengontrol  asma yang aman untuk ibu hamil. Dokter bertanya kepada apoteker obat apa yang diberikan? (system  pernafasan 3)', '["Budesonid","Fumetason","Prednison","Salbutamol","Terbutalin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(96, 96, 'pasien laki-laki berumur 45 tahun didiagnosis mengalami hipertensi sejak 3 tahun  yang lalu. pasien kemudian mendapatkan terapi kombinasi kaptopril dan hidroklorotiazide, parameter  apa yang perlu dipantau terkait efek samping kedua obat tersebut', '["kalsium","kalium","natrium","magnesium","klorida"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(97, 97, 'pria berumur 67 tahun datang kedokter dan didiagnosis mengalami hipertensi, ia  memiliki riwayat penyakit diaetes tipe II yang saat ini terkendali dengan insulin. dokter meresepkan  obat antihipertensi untuk pria tersbut, berapakah target tekanan darah yang harus dicapai pria  tersebut?', '["<140\\/90","<120\\/80","<150\\/90","<130\\/90","<160\\/100"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(98, 98, 'seorang anak berusia 5 tahun menderita hemofilia A dan harus segera mendapatkan  terapi, terapi apa yang anda rekomendasikan untuk anak tersebut?', '["tranfusi RBC","Faktor VIII","Faktor IX","Vitamin K","Eritropoetin"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(99, 99, 'seorang pasien (43 tahun) mengalami anemia setelah mengkonsumsi metotreksat  untuk terapi kanker yang dialaminya. dokter akan mengobati anemia tersebut, rekomendasi apa yang anda  berikan?', '["piridoksin","asam folat","tokoferol","retinol","kobalamin"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(100, 100, 'seorang perempuan sedang hamil 7 bula datang kerumah sakit dan didiagnosis   menderita CAP, antibiotik lini pertama untuk pasien tersebut adalah', '["doksisiklin","siprofloksasin","levofloksasin","kloramfenikol","eritromisin"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(101, 101, 'Seorang Apoteker di Rumah Sakit melakukan stok  opname. Terdapat beberapa obat-obatan yang rusak  seperti Furosemid 40 mg sebanyak 10 tab dari  sisa stok 100 tab dengan total pembelian sebesar 5000 tab.  Kepala IFRS meminta apoteker  tersebut untuk melakukan evaluasi obat rusak dan kedaluwarsa. Berapa persentase (%) obat yang rusak  dan kedaluwarsa ?', '["0,02","0,2","2","0,1","10"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(102, 102, 'Seorang Apoteker di Rumah sakit melakukan  pengendalian ketersediaan obat-obatan Sitotastik untuk mencegah terjadinya kekosongan atau kekurangan  obat. /untuk mengatasi hal tersebut perlu diketahui jumlah kebutuhan obat/stok obat. Apa istilah stok  yang digunakan untuk periode berjalan ?', '["Optimum","Kerja","Penanganan","Waktu kosong","Waktu tunggu"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(103, 103, 'Seorang Apoteker di Rumah sakit melakukan evaluasi  kesesuaian realisasi pengadaan dengan rencana kebutuhan obat. Diketahui bahwa jumlah pesanan obat  Ceftriaxon Injeksi 1 g untuk 1 bulan sebanyak 1000 vial, jumlah rencana kebutuhan obat tersebut untuk  1 bulan adalah 2.000 vial, jumlah obat yang datang 900 vial. Berapa persen (%) realisasi pengadaan  terhadap perencanaan ?', '["50","60","70","80","90"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(104, 104, 'Seorang apoteker di instalasi farmasi rumah sakit  baru saja menerima pesanan obat-obatan dari PBF. Beberapa obat-obatan tersebut adalah tablet  prednison tablet, prednisolone tablet, Piroksikam tablet dan Primolut N tablet. Selain diurutkan  secara alfabetis, penyimpanan obat-obatan tersebut harus memperhatikan obat-obatan yang termasuk  dalam kategori LASA. Bagaimanakah penyimpanan yang tepat terhadap ke-4 obat tersebut?', '["Prednison tablet-Prednisolon tablet-Piroksikam tablet-Primolut N tablet","Prednisolon tablet-Prednison tablet-Primolut N tablet-Piroksikam tablet","Prednisolon tablet- Piroksikam tablet-Primolut N tablet-Prednison tablet","Piroksikam tablet-Prednisolon tablet-Prednison tablet- Primolut N tablet","Prednison tablet- Piroksikam tablet-Prednisolon tablet-Primolut N tablet"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(105, 105, 'Seorang Apoteker Penanggung Jawab yang bekerja di  PBF Cabang ingin melakukan pelaporan mengenai penerimaan dan penyaluran obat/bahan obat di PBF  tersebut karena telah memasuki periode pelaporan. Kapan apoteker tersebut harus melakukan  pelaporan?', '["Setiap 3 Bulan","Setiap 4 Bulan","Setiap 6 Bulan","Setiap Bulan di Tanggal 10","Tidak Perlu melakukan Pelaporan"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(106, 106, 'seorang peneliti melakukan suatu uji dengan prosedur kerja berupa pada  20  tablet dibebas debukan, lalu di masukkan kedalam alat frabilator kemudian diputar pada 100 rpm dan  selanjutnya tablet ditimbang yang sebelumnya telah dibebas debukan. apakah uji yang di maksudkan?', '["uji kekerasan","uji kerapuhan","uji seragaman bobot","uji seragaman ukuran","uji waktu hancur"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(107, 107, 'bagian R&D di suatu industry farmasi  melakukan evaluasi kerapuhan sediaan tablet clozapine 10 mg dengan bobot tablet 100 mg yang baru  dikembangkan. Diketahui bahwa bobot 20 tablet sebelum dilakukan uji kerapuhan yakni 2031 mg dan bobot  setelah pengujiannya 2018 mg. berapa persentasi hasil uji tersebut?', '["1,42","0,64","0,74","0,99","1,00"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(108, 108, 'Salah satu syarat wadah kaca yang harus dipenuhi  ketika digunakan dalam sediaan farmasetika adalah harus tidak bereaksi dengan bahan obat. Pernyataan  ini terkait erat dengan sifat kaca yang dipilih harus bersifat ?', '["incompatible","inert","titik leleh rendah","ringan","terdegradasi"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(109, 109, 'Seorang apoteker yang bekerja di Instalasi Farmasi  Rumah Sakit  akan melakukan perhitungan rata-rata penggunaan tablet kalsium laktat 500 mg.  Pencatatan data stok opname penggunaan tablet tersebut selama tahun 2023 sebanyak 2.500.000 tablet.  kemudian pada bulan Juli, Agustus, dan Oktober tidak ada penggunaan obat tersebut  karena  terjadinya kekosongan. Berapakah rata- rata penggunaan tablet tersebut setiap bulannya?', '["277.777 Tablet\\/Bulan","312.500 tab\\/bulan","357.142 tab\\/bulan","416.666 tab\\/bulan","625.000 tab\\/bulan"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(110, 110, 'Seorang apoteker di apotek melakukan analisis  keuangan pada akhir tahun 2023 untuk melihat nilai rasio keuntungan yang didapatkan apotek pada tahun  tersebut, dari data neraca keuangan didapatkan laba bersih apotek sebesar Rp. 28.000.000, modal  pemilik Rp. 90.000.000; total aktiva Rp. 175.000.000 dan total penjualan Rp.500.000.000. Berapakah  nilai tersebut ?', '["31,1%","5,6 %","9,8 %","16 %","28,71 %"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(111, 111, 'Seorang Apoteker  Penanggung Jawab Apotek yang bekerja di Klinik sedang melakukan perencanaan pengadaan obat  Methylprednisolone Sodium Succinate Serbuk Injeksi 500 mg/vial. Diketahui data penggunaan dan  pemesanan obat : Penggunaan dalam 1 bulan = 200 ampul Lead time = 0,5 bulan Buffer stock = 20%.  Berapa yang harus dipesan jika periode penggunaannya adalah 1 bulan?', '["330 ampul","340 ampul","350 ampul","360 ampul","370 ampul"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(112, 112, 'Seorang apoteker  menerima obat dengan nama dagang Rhinofed tablet yang memiliki kandungan pseudoephedrine HCl 60 mg  dan Triprolidine 2,5 mg dari sales PBF yang baru saja datang. Obat tersebut akan disimpan dengan  memperhatikan golongannya supaya menghindari medication error. Dimanakah obat tersebut harus  disimpan?', '["Lemari Narkotik","Lemari Obat Bebas","Lemari Obat Bebas Terbatas","Lemari Psikotropik","Lemari Precursor"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(113, 113, 'Apoteker di apotek  melakukan perhitungan  harga jual obat. Apotek menetapkan harga margin obat adalah 1,2 dengan  PPN 11%. Obat Candesartan 16mg diketahui memiliki HNA+PPN adalah sebesar Rp. 12.000/10 tablet.  Berapakah HJA obat tersebut?', '["Rp. 13.200","Rp. 13.320","Rp. 14.400","Rp. 15.840","Rp. 15.984"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(114, 114, 'jika ibu hamil didiagnosis HIV, maka diadakan terapi untuk mencegah tranmisi  virus ke bayi, terapi dilakukan pada ibu hamil sebelum dan sesudah melahirkan, serta pada bayinya.  terapi apakah yang digunakan', '["tenofovir","lamivudin","efavirenz","zidovudin","lopinavir"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(115, 115, 'seorang pendaki gunung akan mendaki gunung didaerah endemik malaria. ia  berkonsultasi dengan dokter terkait terapi profilaksis agar tidak terkena malaria. apakah terapi yang  direkomendasikan?', '["levofloksasin","amoksisilin","doksisiklin","seftriakson","artemisin"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(116, 116, 'seorang pasien berusia 45 tahun didiagnosa hipotiroidisme dan hasil uji  laboratoriumnya menunjukkan peningkatan hormon TSH. obat apa yang direkomendasikan untuk pasien  tersebut?', '["Iodin radioaktif","profiltiourasil","levotiroksin","methimazol","propanolol"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(117, 117, 'seorang pasien berusia 55 tahun didiagnosa menderita diabetes melitus, dokter  meresepkan akarbosa 3x1. bagaimanakah informasi yang harus diberikan apoteker terkait metode konsumsi  obat ini?', '["diminum satu jam sebelum makan","diminum tiga puluh menit sebelum makan","diminum bersamaan dengan suapan pertama saat makan","diminum tiga puluh menit setelah makan","diminum satu jam setelah makan"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(118, 118, 'seorang ibu hamil 2 bulan didiagosa hipertiroid oleh dokter. obat apa yang tidak  disarankan diberikan pada pasien tersebut?', '["propiltiourasil","metimazol","metamizol","bisoprolol","levotiroksin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(119, 119, 'bagian R&D di  suatu industry farmasi melakukan evaluasi sediaan granul  paracetamol yang baru dikembangkan.  Pada pengukuran mengunakan flowability tester, diperoleh nilai tinggi  gundukan granul = 2,27  cm, dengan diameter 8,7 cm. selanjutnya dihitung nilai sudat diam granul tersebut. Berapakah nilai  sudut yang diperoleh?', '["27,56","14,6","75,38","62,44","25,56"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(120, 120, 'sebuah pabrik farmasi memproduksi injeksi X.   sediaan tersebut direncanakan untuk dikemas dalam wadah vial kaca. untuk memenuhi persyaratan wadah  digunakan kaca dari borosilikat. apakah tipe kaca tersebut ?', '["I","II","III","IV","NP"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(121, 121, 'seorang mahasiswa ingin membuat sediaan hidung  berupa tetes hidung dengan pelarut air. pada sediaan diinginkan memiliki viskositas sediaan yang sama  dengan mukosa hidung. Apakah pendekatan formula yang dapat dilakukan ?', '["Menambahkan cera alba 5 %","Menambahkan etil selulosa 5 %","menambahkan asam stearat 0,5 %","Menambahkan setil alkohol 5 %","Menambahkan metil selulosa 0,5%"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(122, 122, 'seorang mahasiswa diminta untuk menghitung tonisitas suatu sediaan infus  menggunakan metode kriskopik, pada metode ini sifat sediaan akan ditentukan berdasarkan  perbandingan   Ä Tf formula. jika  larutan dikatakan bersifat  hipotonis, berapakah perkiraan nilai  Ä Tf formula ?', '["lebih dari 0,52","kurang dari 0,52","sama dengan 0,52","lebih dari atau sama dengan 0,58","kurang dri 0,58"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(123, 123, 'Kepingan sel darah merah dapat mengembang dan pecah (lisis) karena terjadi  perpindahan sejumlah cairan dari luar ke dalam kepingan darah setelah pemberian larutan kedalam  saluran darah.  Hal ini dapat disebabkan oleh sifat larutan tersebut yaitu:', '["isohidris","Hipertonis","Hipotonis","Isotonis","osmotik"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(124, 124, 'seorang pria baru saja kehilangan istrinya akibat kecelakaan mengalami  generalized anxiety disorder. dokter akan memberikan terapi yang sesuai untuk pria tersebut. GAD  dapat diatasi dengan obat golongan?', '["SNRI","SSRI","TCA","antipsikotik","benzodiazepin"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(125, 125, 'pria berusia 50 tahun didiagnosis parkinson dan akan menerima terapi dari  dokter. terapi lini pertama penyakit parkinson menggunakan golongan obat', '["NMDA reseptor","antikolinergik","MAO-B Inhibitor","L-dopa","dopamin antagonis"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(126, 126, 'seorang pasien berusia 55 tahun diantar kerumah sakit setelah mengalami kejang.  dokter mendiagnosis pasien menderita epilepsi dan akan meresepkan obat antiepilepsi. berikut obat  yang tidak digunakan dalam terapi epilepsi', '["triheksilfenidil","fenitoin","asam valproat","levetiracetam","carbamazepine"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(127, 127, 'seorang ibu hamil mengalami sakit kepala berat yang terasa berdenyut dan  mengenai sebelah sisi kepala saja. dokter telah memberikan parasetamol akan tetapi pasien tetap  mengeluhkan hal yang serupa. dokter berkonsultasi dengan apoteker untuk pengobatan selajutnya. obat  yang sebaiknya disarankan apoteker untuk pencegahan hal tersebut?', '["celecoxib","ergotamin","fenitoin","propanolol","natrium diklofenak"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(128, 128, 'seorang wanita berumur 30 tahun datang ke klinik dengan keluhan pusing dan  terasa berputarketika bangun dari posisi duduk. doktermendiagnosa pasien vertigo dan meresepkan obat.  obat apa yang tepat untuk direkomendasikan?', '["parasetamol","betahistin","asam mefenamat","betahistin","ibuprofen"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(129, 129, 'salah satu uji yang dilakukan pada pemilihan metode sterilisasi ruangan steril,  adalah melalui uji sterilitas menggunakan metode inokulasi langsung. pada evaluasi ini salah satu  bakteri yang dapat digunakan adalah bakteri yang memiliki karakteristik terbentuk batang. apakah  bakteri ang dimaksudkan ?', '["Pseudomonas aeruginosa","Stapylococcus aureus","Streptococcus mutans","Bacillus subtilis","lactobacillus casei"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(130, 130, 'Pengolahan air pada tahap pembuatan air untuk  injeksi melalui destilasi, dilakuakn dengan cara air murni  dipanaskan dengan suatu  plant steam  bersuhu 150ºC sehingga berubah menjadi uap.  salah satu keuntungan  perlakuan ini adalah Pirogen dapat terpisah dengan  air, sehingga diperoleh air untuk injeksi  yang bebas pirogen. apakah sifat pirogen sehingga menjadi penyebab keterpisahan  tersebut?', '["Larut pada suhu 150\\u00baC","memiliki bobot jenis lebih besar dari air","terpisah karena penyaringan","perbedaan konsentrasi","menguap bersama air"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(131, 131, 'bagian penelitian dan pengembangan industri farmasi  akan  menancang sediaan steril  zat aktif berupa amoxicilin. kajian preformulasi terkait  sifat fisikokimia dan stabilitas telah dilakukan dan diperoleh bahwa air dapat memutuskan cincin  betalaktam, sehingga perlu dipilih bentuk sediaan yang tepat. berdasarkan kajian tersebut apakah  sediaan yang tepat untuk zat tersebut?', '["Larutan irigasi","Larutan intravena","serbuk parenteral","emulsi parenteral","suspensi steril"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(132, 132, 'air merupakan salah satu bahan yang paling banyak  digunakan dalam pengolahan sediaan di pabrik farmasi sehingga membutuhkan sistem pengolahan yang  tepat. pada sistem pemurnian air yang juga masuk dalam sistem pengolahan air, dilakukan beberapa  tahapan untuk memperoleh kemurnian air yang sesuai. hal dilakukan untuk menghilangkan berbagai  cemaran adalah dilakukan beberapa  tahap dalam penyaringan. jenis penyaring  yang tidak  termasuk dalam sistem ini adalah?', '["multimedia filter","carbon filter","water softener","Hepa filter","sand filter"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(133, 133, 'Seorang ibu datang  ke apotek ingin membeli obat Tempra Forte Sirup rasa jeruk 60 mL. Apoteker menghitung harga obat  tersebut dengan melihat Harga Pokok Penjualan sebsar Rp. 60.600 per botol belum termasuk ppn. Apotek  menginginkan keuntungan 25% untuk ethical dan 11% untuk OTC. Berapakah harga (Rp) jual obat tersebut  per botol?', '["67.266","75.750","82.416","83.325","84.082"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(134, 134, 'Suatu rumah sakit  ingin melakukan pengelolaan obat yang efektif dan efisien terutama dalam tahap seleksi dan  perencanaan. Salah satu hal yang bisa dilakukan yaitu analisis farmakoekonomi dengan metode mengukur  nilai spesifik kesehatan dalam bentuk pilihan setiap individual. Apa metode yang  dimaksud?', '["Cost utility analysis","Cost effectiveness analysis","Cost bemefit analysis","Cost minimization analysis","Cost analysis"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(135, 135, 'Suatu apotek  mendapatkan 3 item obat kadaluarsa setelah melakukan stock op name, obat tersebut akan dilakukan  pemusnahan oleh apoteker penanggung jawab di apotek. Kegiatan pemusnahan tersebut harus dibuat berita  acara yang nantinya akan dilaporkan ke pihak yang terkait. Berapa rangkap berita acara yang harus  dibuat?', '["1","2","3","4","5"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(136, 136, 'Seorang apoteker di  suatu apotek ingin mengetahui keuntungan laba bersih apotek di bulan sebelumnya dengan melihat  pendapatan apotek pada bulan sebelumnya sebesar Rp. 145.000.000 dengan harga pokok penjualan Rp  99.000.000 dan diketahui biaya operasional apotek tersebut adalah Rp 22.000.000. Berapakah laba  bersih (Rp) apotek tersebut?', '["24.000.000","46.000.000","84.500.000","121.000.000","123.000.000"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(137, 137, 'Seorang apoteker di  rumah sakit melakukan perencanaan obat untuk kebutuhan 1 tahun yang akan datang. Berikut ini adalah  daftar obat yang akan diadakan oleh apoteker tersebut: - Lidokain injeksi-  Rifampisin tablet- Pantoprazol injeksi- Vitamin B kompleks injeksi- Infus NaCl  0,9%Manakah obat yang termasuk ke dalam daftar essensial?', '["Lidokain injeksi","Rifampisin tablet","Pantoprazol injeksi","Vitamin B kompleks injeksi","Infus NaCl 0,9%"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(138, 138, 'Seorang anak laki-laki berusia 10 tahun dibawa ke  dokter karena mengalami diare yang berlendir dan berdarah serta mengalami dehidrasi ringan.  Berdasarkan tanda dan gejala tersebut, dokter mendiagnosa disentri dengan hasil lab menunjukkan  positif Shigella spp. Apakah antibiotic yang tepat untuk diberikan kepada pasien tersebut?', '["amoksisilin","kotrimoksazol","metronidazol","levofloksasin","azitromisin"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(139, 139, 'Seorang wanita datang ke apotek mengeluhkan anaknya berusia 2 tahun mengalami  diare, sudah diberikan oralit. Wanita tersebut ingin membeli suplemen zink untuk membantu penyembuhan  diare sang anak, sebagai apoteker informasi apa yang anda sampaikan?', '["Tidak perlu tambahan zink",".Diminum selama 7 hari","Diminum sampai diare berhenti","Diminum selama 3 hari","Diminum selama 10 hari"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(140, 140, 'Seorang apoteker di  apotek saat  melakukan stock op name mendapatkan ada 5 item obat yang sudah 3 bulan lebih tidak  terjual atau tidak mengalami perputaran. Hal tersebut akan menimbulkan kerugian bagi apotek karna  obat tidak bergerak. Apoteker akan mengeluarkan daftar 5 item obat tersebut dalam perencanaan  pengadaan periode selanjutnya. Daftar obat apakah yang dimaksud?', '["Death Stock","Limited Stock","Out Of Stock","Over Stock","Slow Moving"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(141, 141, 'Seorang pasien  ingin membeli obat asam mefenamat di apotek, namun sediaan tersebut habis, apoteker berinisiatif  memberi obat merk lain dengan isi kandungan yang sama, hal ini dilakukan apoteker sesuai dengan  peraturan tertulis yang disahkan oleh negara. Peraturan apa yang dimaksud?', '["UU Nomor 36 tahun 2009","PP Nomor 51 tahun 2009","PMK Nomor 72 tahun 2016","PMK Nomor 73 tahun 2016","PMK Nomor 74 tahun 2016"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(142, 142, 'Seorang apoteker  yang baru menyelesaikan pendidikan profesi apoteker ingin membangun dan mendirikan suatu usaha kecil  obat tradisional (UKOT) di suatu daerah. Proses utama yang harus dilakukan adalah pengurusan izin  usaha. Apoteker tersebut ingin mendapatkan legalitas izin tersebut kepada yang berwenang. Siapakah  yang dimaksud?', '["Direktur Jendral","Badan POM","Pemerintah Provinsi","Kepala Dinas Kesehatan Kab\\/Kota","Kepala Dinas Kesehatan Provinsi"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(143, 143, 'seorang penelitian di bagian riset dan pembangan  suatu industri farmasi  diminta untuk merancang formulasi sediaan parenteral dosis ganda. salah  satu aspek yang diperhatikan pada perancangan adalah kestabilan biologi sediaan, sehingga perlu  penambahan untuk memenuhi hal tersebut. apakah bahan yang dimaksudkan?', '["Antioksidan","Pengawet","pengatur tonisitas","bahan pengkhelat","buffer"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(144, 144, 'bagian produksi sebuah industri farmasi memproduksi salep mata gentamicin  menggunakan metode aseptis.  Berdasarkan persyaratan CPOB,kegiatan produksi diatur di berbagai  kelas bersih untuk menghindari kontaminasi utama saat proses pengisi kedalam wadah. Apakah kelas  untuk proses tersebut ?', '["A","B","C","D","E"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(145, 145, 'bagian riset dan pengembangan suatu industri  farmasi mengembangkan sediaan tablet ibuprofen, pada tahap evaluasi dilakukan uji waktu hancur dengan  media air dan suhu 37oC,  berapakah jumlah sampel awal yang digunakan pada pengujian  tersebut?', '["3","6","12","16","18"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(146, 146, '', '["1,1","36","65","39","3"]', 'A', 'bank/to_4_angkatan_8_files/mc146-1.jpg', 'bagian R&D di suatu industry farmasi melakukan evaluasi waktu hancur sediaan  granul  paracetamol yang baru dikembangkan. Pada pengukuran tersebut diperoleh data seperti  diatas selanjutnya dihitung nilainya tersebut. Berapakah nilai (menit) yang  diperoleh?', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(147, 147, 'bagian penelitian dan pengembangan industri farmasi sedang mengembangkan formula  sediaan larutan infus 100 ml dan menghitung tonisitas sediaan menggunakan metode kriskopik, pada  metode ini tonisitas sediaan akan ditentukan berdasarkan perbandingan   Ä Tf formula. jika larutan nyatakan bersifat hipotonis dengan   Ä Tf formula 0,32, berapakah jumlah (gram) NaCl yang perlu  ditambahkan?', '["0,52","0,32","0,34","0,58","1,7"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(148, 148, 'Seorang Bapak usia 50 tahun, datang ke apotek membawa resep dari dokter. hasil  diagnosis dokter yaitu pasien mengalami infeksi diare traveler. obat yang disarankan adalah?', '["Ciprofloksasin","Cefadroksil","Cefiksim","Kloramfenikol","Tetrasiklin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(149, 149, 'seorang wanita berusia 30 tahun, berat badan 100 Kg. mengeluh sakit kaki. jari  jari kakinya wanita tersebut mengalami luka yang tak kunjung sembuh. oleh karena itu wanita tersebut  memeriksakan diri ke puskesmas terdekat. oleh dokter diminta untuk melakukan pemeriksaan glukosa  darah. adapun hasilnya sebagai berikut:  Glukosa darah puasa 150  mg/dl, glukosa darah sewaktu 235 mg/dl. oleh dokter diberikan glimepirid. Bagaimana mekanisme  kerja dari obat diatas?', '["Meningkatkan sekresi insulin oleh sel beta pankreas dan meningkatkan sensitivitas insulin di perifer","Menurunkan sekresi insulin oleh sel beta pankreas dan meningkatkan sensitivitas insulin di perifer","Meningkatkan sekresi insulin oleh sel alfa pankreas dan menurunkan sensitivitas insulin di perifer","Meningkatkan sekresi insulin oleh sel beta pankreas dan menurunkan sensitivitas insulin di perifer","Menurunkan sekresi insulin oleh sel alfa pankreas dan meningkatkan sensitivitas insulin di perifer"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(150, 150, 'seorang wanita umur 35 tahun mengeluh nyeri saat buang air kecil dan demam  selama 5 hari. Dokter mendiagnosis pasien tersebut mengalami ISK obat yang tepat untuk pasien  tersebut adalah?', '["Siprofloxacin","erithromisin","Cefadroxil","azithromisin","Amikasin"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(151, 151, 'Sediaan steril obat diinfuskan dengan kecepatan tetap 50 mg/jam selama 4 jam  kepada pasien penyakit infeksi, kemudian infus dihentikan. Diketahui waktu paro eliminasi obat 6 jam.  Diketahui kadar obat saat infus dihentikan 32 mg/L berapakah kadar obat dalam darah 12 jam setelah  dihentikan?..( mg/L)?', '["8","16","24","25","23"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(152, 152, 'Seorang pasien kanker ovarium akan menjalani kemoterapi siklus ke-3 dengan  carboplatin, usia pasien 52 tahun, berat badan 58 kg, tinggi 148 cm dan serum kreatinin 1,52 mg/ dL(  diketahui AUC target 5 mg/ ml.menit Berapakah dosis carboplatin yang harus diberikan?', '["323","576","233","456","223"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(153, 153, 'seorang  laki-laki umur 40 tahun. Dengan keluhan demam, diare berat yang  mengandung darah dan disertai muntah. Hasil diagnosis dokter pasien terinfeksi diare bakteri  shigella.  antibiotik yang tepat untuk kasus tersebut adalah?', '["amikasin","Ciprofloxacin","Kloramfenikol","kotrimoksasol","Metronidazol"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(154, 154, 'Seorang laki-laki umur 45 tahun. Dengan keluhan pembesaran prostat, hasil  diagnosis dokter pasien mengalami Benign Hiperplasia Prostat. Obat yang diresepkan oleh dokter adalah  Finasterid 1x sehari.  golongan obat tersebut adalah?', '["ACEI","ARB","Alfa bloker 1","5 alfa reduktase inhibitor","Beta Bloker"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(155, 155, 'Seorang anak umur 5 tahun,  berat 18 Kg, didiagnosis menderita asma dan  menerima terapi infus theopyline. Jika volume distribusi 9000ml, Kliren 1,44ml/min/kg, Css target 12  mikrogram/ml berapa loading dose (mikrogram) untuk pasien tersebut?', '["108.000","151.20","10.800","15.120","108"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(156, 156, 'seorang anak umur 5 tahun,  berat 18 Kg, didiagnosis menderita asma dan  menerima terapi infus theopyline. Jika volume distribusi 9000ml, Kliren 1,44ml/min/kg, Css target 12  mikrogram/ml.  berapa  laju infus  ( mg/ jam) yang diberikan?', '["1,69","19,69","16,69","311,04","314,04"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(157, 157, 'Seorang ibu hamil trisemester 1 datang ke apotek konsultasi ke apoteker terkait  keluhan mual muntah yang dialaminya obat yang direkomendasi adalah?', '["Vitamin B6","Ondansetron","Domperidon","Diphenhidramin","Metoklopramid"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(158, 158, 'Seorang ibu hamil trisemester 1 datang ke apotek konsultasi ke apoteker terkait  keluhan mual muntah yang dialaminya, apoteker tersebut memberikan vitamin B6 obat tersebut termasuk  kategori kehamilan?', '["A","B","C","D","X"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(159, 159, 'Pasien anak dengan keluhan tampak biru, sesak saat menetek asi pada ibunya,  berta badan sulit naik dan hasil diagnosis dokter yaitu kelainan jantung bawaan  obat yang  direkomendasikan untuk kasus tersebut adalah?', '["sildenafil","isosorbit dinitrat","Nifedipin","amlodipin","Furosemid"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(160, 160, 'Seorang pasien dewasa laki-laki umur 30 tahun memeriksakan data laboratorium  didapatkan hasil LDL  139mg/dL; HDL 30 mg/dL oleh dokter diberikan terapi simvastatin 20mg 1x1  Efek samping penggunaan obat tersebut jika digunakan selama 12 bulan berturut turut?', '["Alergi","Demam","Diare","Sakit Kepala","Myalgia"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(161, 161, 'Seorang wanita 32 tahun didiagnosis preeklampsia pada usia kehamilannya yang  memasuki minggu ke 34.  Tekanan darah 150/90 mmHG. Obat yang tepat pada kasus tersebut  adalah?', '["Aliskiren","Metildopa","Captopril","Amlodipin","Ramipril"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(162, 162, 'Seorang Bapak usia 50 tahun, berat badan 45 kg, datang ke apotek membawa resep  dari dokter yang berisi ciprofloxacin. Hasil diagnosis dokter yaitu pasien mengalami infeksi sepsis  dengan penyakit penyerta ISK.  Hasil pemeriksaan laboratorium pasien tersebut yaitu serum  kreatinin 6 mg/dL.  Berapa dosis yang disarankan?', '["500 mg tiap 6 jam sekali","500 mg tiap 8 jam sekali","500 mg tiap 12 jam sekali","500 mg tiap 18 jam sekali","500 mg tiap 24 jam sekali"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(163, 163, 'Seorang laki laki umur 34 tahun, mengeluhkan sakit di telinga. hasil diagnosis  dokter yaitu otitis media. pasien tersebut alergi terhadap obat golongan penicilin. obat pilihan  utama adalah?', '["Amoxicilin","Amoxicilin -clavulanat","Azithromicin","ampicilin","siprofloxasin"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(164, 164, 'Pasien wanita usia 30 tahun datang dengan keluhan batuk lebih dari 2 minggu.  Batuk dirasakan lebih sering pada malam hari sejak 3 bulan yang lalu. Keluhan lainnya adalah demam  dan penurunan nafsu makan disertai dengan penurunan berat badan, serta memiliki riwayat kontak dengan  penderita TB. Hasil diagnosis dokter pasien menderita TB paru. oleh dokter diresepkan obat INH,  Rifampicin, Etambutol, pirazinamid dan vitamin b6 selama dua bulan. Fungsi dari penambahan obat  vitamin diatas adalah?', '["mencegah nefropati","mencegah neuropati perifer","mencegah nefrotoksik","mencegah hepatotoksik","mencegah sakit kepala"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(165, 165, 'Seorang Bapak usia 50 tahun, datang ke apotek dengan keluhan batuk kering dengan  frekuensi sering, batuk ini sudah 3 hari dirasakan pasien dan sangat mengganggu obat yang disarankan  adalah?', '["Ambroxol","Bromhexin","Dextromethorphan","Erdosteine","N-acetylsistein"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(166, 166, 'seorang anak umur 5 tahun,  berat 18 Kg, didiagnosis menderita asma dan  menerima terapi infus theopyline. Jika volume distribusi 9000ml, Kliren 1,44ml/min/kg, Css target 12  mikrogram/ml berapa  laju infus untuk pasien tersebut (mikrogram/menit)?', '["32,82","16,8","160,8","283,23","328,32"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(167, 167, 'Suatu apotek menerima obat yang sebelumnya dilakukan pemesanan 3 hari yang lalu  dengan nama dagang Braxidin yang memiliki kandungan klordiazepoksida dan klinidium bromide. Apoteker  ingin melakukan penyimpanan obat tersebut dengan memperhatikan golongan obat tersebut.   Dimanakah obat tersebut harus disimpan?', '["Lemari Narkotik","Lemari Obat Bebas","Lemari Obat Bebas Terbatas","Lemari Psikotropik","Lemari Precursor"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(168, 168, 'Sebuah rumah sakit ingin melakukan perencanaan stok albumin injeksi karena  sering berguna untuk menangani syok hipovolemik dan kritis dalam menjaga kehidupan pasien. Rumah  sakit tersebut harus mengalokasikan biaya investasi sebesar 75% untuk membeli albumin injeksi  tersebut. Termasuk ke dalam kelompok manakah albumin injeksi tersebut?', '["VA","EB","NA","VB","EA"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(169, 169, 'Seorang apoteker apotek X membuat laporan neraca keuangan apotek tahun 2022  dengan data sebagai berikut :  - Modal awal              = Rp. 200.000.000-  Pendapatan            = Rp. 150.000.000-  Pendapatan non resep      = Rp. 200.000.000-  HPP                  = Rp.  270.000.000- Biaya Operasional      = Rp.   40.000.000 Berapa  Pay Back Periode apotek tersebut?', '["2 tahun","3 tahun","4 tahun","5 tahun","6 tahun"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(170, 170, 'Seorang apoteker di apotek Sejahtera akan melakukan pengadaan obat cacing  combantrine. Diketahui obat tersebut dijual oleh PBF dengan harga Rp. 11.350 per botol belum termasuk  ppn. Apotek menginginkan keuntungan 25% untuk ethical dan 10% untuk OTC. Berapakah harga (Rp) jual  obat tersebut per botol?', '["13.733","14.883","15.375","16.912","17.500"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(171, 171, 'Seorang apoteker di suatu rumah sakit sedang melakukan analisis farmakoekonomi  mengenai perbedaan harga tanpa melihat efektivitasnya antara dua buah obat (paten dan generik).   Apa analisis yang digunakan apoteker tersebut?', '["Cost utility analysis","Cost effectiveness analysis","Cost bemefit analysis","Cost minimization analysis","Cost analysis"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(172, 172, 'Seorang apoteker di apotek mendapat resep racikan untuk membuat sediaan krim  salisilat untuk mengatasi gatal pada kulit. apoteker memberikan informasi terkait lama pemakaian  sediaan tersebut. Berapa BUD dari sediaan krim tersebut?', '["3 hari","7 hari","14 hari","28 hari","30 hari"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(173, 173, 'Seorang apoteker di suatu apotek melakukan pengadaan Ibuprofen Sirup sepanjang  tahun 2021 sebesar 35.000.000. Stok opname Ibuprofen Sirup pada awal tahun tahun 2021 sebesar  15.000.000 dan akhir tahun tahun 2021 adalah 21.000.000, Apoteker melakukan pengadaan Ibuprofen Sirup  sebesar Rp. 87.000.000 Berapakah TOR (turn over rato) Ibuprofen Sirup tersebut?', '["4,83","5,80","4,14","2,90","2,07"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(174, 174, 'Seorang apoteker di apotek mendapatkan hasil penjualan sebesar Rp 360.000.000  selama 1 tahun dan investasi sebesar Rp 125.000.000.  Berapakah nilai rasio Return of Investment  dari apotek tersebut?', '["1,78","1,88","2,68","2,78","2,88"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(175, 175, 'Seorang apoteker di apotek ingin melakukan pemusnahan obat yang sudah kadaluarsa  dan rusak, pemusnahan tersebut harus dibuat berita acara yang nantinya akan dilaporkan ke pihak yang  terkait.  Berapa rangkap berita acara yang harus dibuat?', '["1","2","3","4","5"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(176, 176, 'Suatu industri obat tradisional ingin melakukan pengurusan izin berusaha.  Berdasarkan peraturan yang berlaku, diperlukan apoteker yang berkontribusi dengan tugasnya.   Berapa jumlah minimal apoteker dalam industri obat tradisional tersebut?', '["1","2","3","4","5"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(177, 177, 'Seorang apoteker penanggung jawab apotek melakukan pembelian obat amlodipin  dengan harga Rp. 950/strip belum termasuk PPN. Apotek menjual tablet tersebut dengan harga Rp.  1.254/strip.  Berapakah nilai margin yang ditetapkan oleh apotek (%)?', '["16,20","16,67","17,76","20","20,67"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(178, 178, 'Seorang apoteker di apotek membeli salep miconazole kepada PBF dengan HNA Rp.  2.500/tube belum termasuk PPN. PBF memberikan diskon 10% setiap pembelian 2 box (isi 10 tube/box).  Apoteker membeli 5 box dan menjual salep dengan harga 3.000/tube.  Berapakah (%) nilai mark up  obat tersebut?', '["15,67","15,87","16,67","18,57","20,00"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(179, 179, 'Suatu perusahaan farmasi X membuat sediaan perbekalan farmasi suppositoria.  Didapatkan omset sebesar 250 juta dengan modal awal 50 juta. Diketahui pembelian bahan baku adalah  200 juta dan biaya produksi 20 juta.  Berapa persen Return On Investment?', '["30","40","50","60","70"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(180, 180, 'Seorang Apoteker ingin melakukan analisis farmakoekonomi Captpril dan  Candesartan pada pasien Hipertensi. Hasil analisis Captopril dengan quality of life 0,53 dan length  of life 0,76 tahun sedangkan Candesartan dengan quality of life 0,38 dan length of life 0,72  tahun.  Berapakah nilai QALY untuk Candesartan?', '["0,27","0,32","0,37","0,72","1,27"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(181, 181, 'Komite Farmasi dan Terapi di sebuah rumah sakit akan memasukkan obat antibiotik  profilaksis bedah ke dalam formularium dan standar terapi di rumah sakit. Salah satu obat tersebut  adalah Seftriakson dengan LOS pasien 3 hari dan total harga Rp. 900.000.000.  Berapakah average  cost effective rasio (ACER) obat tersebut?', '["Rp. 240.000.000","Rp. 280.000.000","Rp. 300.000.000","Rp. 400.000.000","Rp. 600.000.000"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(182, 182, 'Seorang apoteker ingin menghitung siklus order suatu obat saat ini di rumah  sakit BERSAMA memiliki stok injeksi omeprazole sebanyak 1000 vial dengan pemakaian per hari sebanyak  10 vial. Pemesanan terakhir dilakukan tanggal 1 Januari 2023 dengan lead time selama 2 hari. Berapa  ROP injeksi omeprazole tersebut?', '["10 vial","20 vial","30 vial","40 vial","50 vial"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(183, 183, 'seorang apoteket di apotek akan melakukan pemesanan dan pengadaan obat ke PBF.  Diketahui jumlah pemakaian obat rata-rata perminggu sebanyak 74 box dengan waktu tunggu 2 minggu dan  stok pengaman 20% dari kebutuhan selama lead time.  Berapakah jumlah (unit) minimum  order?', '["150 box","185 box","212 box","250 box","275 box"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(184, 184, 'Seorang apoteker yang baru menyelesaikan pendidikan profesi apoteker ingin  membangun dan mendirikan suatu usaha kecil obat tradisional (UKOT) di suatu daerah. Proses utama yang  harus dilakukan adalah pengurusan izin usaha. Apoteker tersebut ingin mendapatkan legalitas izin  tersebut kepada yang berwenang. Siapakah yang dimaksud?', '["Direktur Jendral","Badan POM","Pemerintah Provinsi","Kepala Dinas Kesehatan Kab\\/Kota","Kepala Dinas Kesehatan Provinsi"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(185, 185, 'Seorang pasien ingin membeli obat asam mefenamat di apotek, namun sediaan  tersebut habis, apoteker berinisiatif memberi obat merk lain dengan isi kandungan yang sama, hal ini  dilakukan apoteker sesuai dengan peraturan tertulis yang disahkan oleh negara. Peraturan apa yang  dimaksud?', '["UU Nomor 36 tahun 2009","PP Nomor 51 tahun 2009","PMK Nomor 72 tahun 2016","PMK Nomor 73 tahun 2016","PMK Nomor 74 tahun 2016"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(186, 186, 'Salah satu kegiatan manajerial di puskesmas yaitu perencanaan. Apoteker  penanggung jawab di puskesmas ingin melakukan perencanaan pembelian vaksin hepatitis dengan harga  yang mahal dan jarang digunakan. Metode perencanaan apa yang dimaksud?', '["Metode Konsumsi","Just in time","Analisa ABC","Analisa VEN","Kombinasi ABC VEN"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(187, 187, 'Seorang apoteker rumah sakit sedang menghitung kebutuhan obat glibenklamid 5 mg.  Pemakaian rata-rata perbulan adalah 900 tablet. Waktu tunggu yang dibutuhkan untuk pemesanan adalah 4  hari. Pelayanan rumah sakit memberikan pelayanan 30 hari/bulan. apoteker tersebut bertugas untuk  merencanakan agar tidak terjadi kekosongan obat.  Berapakah safety stock yang dibutuhkan agar  ketersediaan tetap terjaga?', '["8","30","35","120","225"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(188, 188, 'Apoteker suatu apotek melakukan pemesanan obat  dengan harga Rp.  72.000/blister belum termasuk PPN. Apotek menjual tablet tersebut dengan harga Rp.  88.000/blister.  Berapakah nilai margin yang ditetapkan oleh apotek (%)?', '["5,90","6,77","7,54","8,36","10,00"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(189, 189, 'Seorang apoteker dibagian QC Industri Obat Tradisional melakukan identifikasi  Tinokrisposida, yang berasal dari ekstrak batang Brotowali. Pola kromatografi ditentukan menggunakan  metode KLT dengan fase gerak Etil asetat P-aseton P-Asam format P:air (16:3:1:1). Lempeng KLT  berukuran panjang 10 cm dengan lebar 2 cm. batas bawah berjarak 1 cm dan batas atas berjarak 1 cm.  setelah dielusi, didapatkan noda dengan jarak rambat 3,5 cm. berapa nilai Rf nya ?', '["0,17","0,35","0,38","0,44","0,5"]', 'C', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(190, 190, 'Seorang apoteker dibagian RnD Industri Obat Tradisional sedang melakukan  standardisasi ekstrak dari Batang Brotowali. Salah satu yang dikerjakan yaitu penentuan bobot jenis.  Didapatkan data dibawah. berapa nilai bobot jenis % (b/b) dari data tersebut ?', '["1,10","1,05","0,95","0,90","0,45"]', 'D', 'bank/to_4_angkatan_8_files/mc190-1.jpg', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(191, 191, 'Seorang apoteker dibagian RnD Industri Obat Tradisional sedang melakukan  standardisasi ekstrak dari Batang Brotowali. Salah satu yang dikerjakan yaitu kadar abu total.  Didapatkan data sebagai berikut,  bobot cawan kosong = 13,25 g; bobot ekstrak awal = 2,00 g;  bobot cawan + abu = 13,36 g. selanjutnya dihitung % (b/b) kadar abu total, berapakah nilai yang  diperoleh?', '["0,05","0,85","0,99","5,50","9,11"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(192, 192, 'bagian produksi industri farmasi akan melakukan penyiapan wadah ampul  ranitidine. pada wadah yang akan digunakan berupa jenis kaca yang diharapkan memiliki daya tahan  secara kimia yang baik sehingga tidak mempengaruhi sediaan tersebut. apakah jenis kaca yang  digunakan?', '["borosilikat","Netral","NP","soda kapur","soda kapur termodifikasi"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(193, 193, 'Seorang wanita berusia 32 tahun menderita HIV (Human Immunodeficiency Virus) dan  baru saja melahirkan bayi dengan persalinan normal pada kehamilan 39 minggu. Apa profilaksis untuk  bayi yang baru lahir tersebut?', '["Antanavir","Lamivudin","Nevirapine","Stavudin","Zidovudin"]', 'E', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(194, 194, 'Seorang pasien laki-laki berusia 46 tahun didiagnosis menderita diabetes  mellitus tipe 2 dan hipertensi. Pasien diberikan terapi  obat  glimepiride   serta  Lisinopril.  Penggunaan  kedua  obat  tersebut   menyebabkan  terjadinya interaksi obat. Efek apa yang perlu diperhatikan dari interaksi kedua  obat tersebut?', '["Efek batuk","Hiperglikemia","Hipertensi","Hipoglikemia","Hipotensi"]', 'D', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(195, 195, 'bagian produksi industri farmasi sedang melakukan perhitungan jumlah operator  yang dibutuhkan. jika bagian tersebut mampu untuk memproduksi sediaan farmasi seperti pada tabel  dibawah dengan hari kerja selama tahun 2024 adalah 251 hari dan waktu kerja per hari selama 8 jam.  berapakah jumlah (orang) yang dibutuhkan?', '["1","2","4","5","7"]', 'B', 'bank/to_4_angkatan_8_files/mc195-1.jpg', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(196, 196, 'bagian produksi industri farmasi telah melakukan produksi sediaan kapsul lunak  vitamin E, selanjutnya  dilakukan analisis beban kerja mengunakan metode full time equivalent ,  untuk mengetahui kebutuhan tenaga kerja optimal pada bagian proses sortir. jika bagian tersebut  memiliki beban kerja seperti pada tabel dibawah, serta hari kerja selama tahun 2024 adalah 251 hari  dan waktu kerja per hari selama 8 jam dengan waktu kelonggaran yang diberikan sebesar 12,5%.  berapakah jumlah (orang) yang diperlukan?   NokegiatanFrekeunsiDurasi   kerja (menit)1menyiapkan alat dan mencuci produk dengan n  heksan11352mensortir soft kapsul17253menyimpan hasil sortir kedalam drying room  dengan temperatur maks. 30oC dan RH maks. 40 % dengan dibawah pengawasan 1154menampung dan menimbang hasil kapsul akhir110', '["1","2","4","5","7"]', 'B', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(197, 197, 'bagian riset dan pengembangan industri farmasi mengembangkan sediaan tablet  salut  gula vitamin B, hasil evaluasi tablet inti menunjukkan bahwa kadar air granul sebesar 5%  untuk mencegah terjadinya basah berlebihan pada tablet saat proses penyalutan, ssehingga dilakukan  penyegelan tablet inti dengan melakukan penambahan bahan berupa talk dan kalsium karbonat untuk  mencegah penyusupan air ke dalam tablet inti. Apakah apakah tahapan yang dilakukan tersebut ? ', '["penambahan dusting powder","penambahan serbuk pelapis","penggunaan larutan pengikat","penggunaan larutan seal coating","perbandingan larutan gula"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(198, 198, 'bagian produksi industri farmasi akan melakukan penyiapan ampul untuk produksi  injeksi diazepam. diketahui bahwa zat aktif bersifat fotosensitif, sehingga perlu digunakan wadah  berupa kaca yang diharapkan memiliki daya tahan secara kimia yang baik sehingga tidak mempengaruhi  sediaan tersebut. apakah jenis kaca yang digunakan?', '["collored","Netral","NP","soda kapur","soda kapur termodifikasi"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(199, 199, 'bagian produksi industri farmasi telah melakukan produksi sediaan tablet  ibuprofen, selanjutnya  dilakukan analisis beban kerja mengunakan metode full time equivalent ,  untuk mengetahui kebutuhan tenaga kerja optimal pada bagian proses pencetakan tablet. jika bagian  tersebut memiliki beban kerja seperti pada tabel dibawah, serta hari kerja selama tahun 2024 adalah  251 hari dan waktu kerja per hari selama 8 jam dengan waktu kelonggaran yang diberikan sebesar 12,5%.  berapakah jumlah (orang) yang diperlukan?   NokegiatanFrekeunsiDurasi   kerja (menit)1menyiapkan alat dan persipan jalur  1352pencetakan tablet1360', '["1","2","4","5","7"]', 'A', '', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12'),
+	(200, 200, 'bagian penelitian dan pengembangan  industri farmasi mengembangkan sediaan  gel piroksikam dengan formula seperti dibawah. sediaan yang telah dibuat kemudian dilakukan uji  penyimpanan dipercepat dan pada hasil uji  viskositas terjadi penurunan angka sebelum dan  sesudah pengujian serta menunjukkan sediaan seperti berari.  berdasarkan hal tersebut dilakukan  peninjauan ulang pada formula dengan menurunkan konsentrasi salah satu bahan yang mempengaruhi hasil  tersebut. apakah bahan yang dimaksudkan?', '["carbomer","gliserin","mentol","propilen glikol","tween 80"]', 'C', 'bank/to_4_angkatan_8_files/mc200-1.jpg', '', '2025-01-29 01:46:12', '2025-01-29 01:46:12');
+/*!40000 ALTER TABLE `banks` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.failed_jobs
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.failed_jobs: ~0 rows (approximately)
+DELETE FROM `failed_jobs`;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.jawabs
+CREATE TABLE IF NOT EXISTS `jawabs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nim` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `#1` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#2` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#3` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#4` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#5` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#6` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#7` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#8` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#9` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#10` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#11` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#12` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#13` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#14` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#15` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#16` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#17` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#18` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#19` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#20` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#21` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#22` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#23` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#24` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#25` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#26` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#27` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#28` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#29` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#30` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#31` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#32` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#33` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#34` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#35` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#36` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#37` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#38` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#39` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#40` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#41` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#42` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#43` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#44` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#45` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#46` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#47` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#48` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#49` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#50` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#51` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#52` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#53` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#54` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#55` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#56` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#57` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#58` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#59` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#60` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#61` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#62` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#63` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#64` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#65` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#66` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#67` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#68` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#69` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#70` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#71` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#72` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#73` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#74` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#75` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#76` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#77` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#78` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#79` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#80` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#81` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#82` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#83` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#84` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#85` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#86` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#87` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#88` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#89` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#90` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#91` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#92` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#93` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#94` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#95` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#96` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#97` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#98` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#99` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#100` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#101` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#102` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#103` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#104` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#105` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#106` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#107` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#108` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#109` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#110` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#111` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#112` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#113` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#114` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#115` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#116` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#117` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#118` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#119` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#120` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#121` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#122` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#123` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#124` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#125` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#126` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#127` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#128` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#129` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#130` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#131` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#132` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#133` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#134` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#135` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#136` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#137` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#138` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#139` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#140` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#141` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#142` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#143` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#144` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#145` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#146` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#147` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#148` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#149` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#150` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#151` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#152` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#153` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#154` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#155` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#156` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#157` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#158` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#159` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#160` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#161` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#162` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#163` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#164` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#165` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#166` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#167` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#168` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#169` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#170` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#171` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#172` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#173` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#174` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#175` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#176` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#177` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#178` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#179` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#180` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#181` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#182` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#183` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#184` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#185` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#186` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#187` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#188` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#189` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#190` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#191` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#192` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#193` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#194` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#195` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#196` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#197` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#198` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#199` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `#200` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.jawabs: ~1 rows (approximately)
+DELETE FROM `jawabs`;
+/*!40000 ALTER TABLE `jawabs` DISABLE KEYS */;
+INSERT INTO `jawabs` (`id`, `nim`, `#1`, `#2`, `#3`, `#4`, `#5`, `#6`, `#7`, `#8`, `#9`, `#10`, `#11`, `#12`, `#13`, `#14`, `#15`, `#16`, `#17`, `#18`, `#19`, `#20`, `#21`, `#22`, `#23`, `#24`, `#25`, `#26`, `#27`, `#28`, `#29`, `#30`, `#31`, `#32`, `#33`, `#34`, `#35`, `#36`, `#37`, `#38`, `#39`, `#40`, `#41`, `#42`, `#43`, `#44`, `#45`, `#46`, `#47`, `#48`, `#49`, `#50`, `#51`, `#52`, `#53`, `#54`, `#55`, `#56`, `#57`, `#58`, `#59`, `#60`, `#61`, `#62`, `#63`, `#64`, `#65`, `#66`, `#67`, `#68`, `#69`, `#70`, `#71`, `#72`, `#73`, `#74`, `#75`, `#76`, `#77`, `#78`, `#79`, `#80`, `#81`, `#82`, `#83`, `#84`, `#85`, `#86`, `#87`, `#88`, `#89`, `#90`, `#91`, `#92`, `#93`, `#94`, `#95`, `#96`, `#97`, `#98`, `#99`, `#100`, `#101`, `#102`, `#103`, `#104`, `#105`, `#106`, `#107`, `#108`, `#109`, `#110`, `#111`, `#112`, `#113`, `#114`, `#115`, `#116`, `#117`, `#118`, `#119`, `#120`, `#121`, `#122`, `#123`, `#124`, `#125`, `#126`, `#127`, `#128`, `#129`, `#130`, `#131`, `#132`, `#133`, `#134`, `#135`, `#136`, `#137`, `#138`, `#139`, `#140`, `#141`, `#142`, `#143`, `#144`, `#145`, `#146`, `#147`, `#148`, `#149`, `#150`, `#151`, `#152`, `#153`, `#154`, `#155`, `#156`, `#157`, `#158`, `#159`, `#160`, `#161`, `#162`, `#163`, `#164`, `#165`, `#166`, `#167`, `#168`, `#169`, `#170`, `#171`, `#172`, `#173`, `#174`, `#175`, `#176`, `#177`, `#178`, `#179`, `#180`, `#181`, `#182`, `#183`, `#184`, `#185`, `#186`, `#187`, `#188`, `#189`, `#190`, `#191`, `#192`, `#193`, `#194`, `#195`, `#196`, `#197`, `#198`, `#199`, `#200`, `created_at`, `updated_at`) VALUES
+	(1, '4890102230001', 'c', 'a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'c', 'c', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'd', 'e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 06:02:31', '2025-01-29 09:13:20');
+/*!40000 ALTER TABLE `jawabs` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.mahasiswas
+CREATE TABLE IF NOT EXISTS `mahasiswas` (
+  `nim` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kelamin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `prodi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_hp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`nim`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.mahasiswas: ~60 rows (approximately)
+DELETE FROM `mahasiswas`;
+/*!40000 ALTER TABLE `mahasiswas` DISABLE KEYS */;
+INSERT INTO `mahasiswas` (`nim`, `nama`, `password`, `tempat_lahir`, `kelamin`, `tanggal_lahir`, `prodi`, `no_hp`, `status`, `alamat`, `foto`, `created_at`, `updated_at`) VALUES
+	('4890102230001', 'ALDI APDILLAH SETIAWAN', '$2y$12$Cuo.UIUSv.v6JBIztL/r1OqySHhiKVu4sGgoupgE5zzye47w/ppkq', 'MARTAPURA', 'L', '2001-04-26', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/3.png', '2025-01-29 09:01:43', '2025-01-29 09:01:43'),
+	('4890102230002', 'AKHMAD SULTHONU AKBAR', '$2y$12$JOO88zpYmyXz/wKZsITZIu81t5oA35L4k1eNRjIHK4.I7ZmTbMcwa', 'BANJARMASIN', 'L', '2001-02-24', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/1.png', '2025-01-29 09:01:43', '2025-01-29 09:01:43'),
+	('4890102230003', 'ANNISA AULIA RIZKIKA', '$2y$12$bQUPEaubUsP4qNI9kmV8nOH.9ncuvYC0PoqT9tqDtgVo4lrZAlr1q', 'PARINGIN', 'P', '2001-08-03', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/4.png', '2025-01-29 09:01:43', '2025-01-29 09:01:43'),
+	('4890102230004', 'NUR EVA SHALEHA', '$2y$12$Ptybp.XvHPmgA13JYS88be3uNoyvjzVgCY.fin3FfvPclcOTt.BJ6', 'BANJARMASIN', 'P', '2000-11-07', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/2.png', '2025-01-29 09:01:43', '2025-01-29 09:01:43'),
+	('4890102230005', 'SILVIA NIDA GUTAWA', '$2y$12$kb19VBsAxJKRCWKdApujEOevMXPxMzxhLaW6URSDoSO96wW.6.45O', 'BANJARMASIN', 'P', '2000-02-13', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:43', '2025-01-29 09:01:43'),
+	('4890102230006', 'DEVI TITIYA', '$2y$12$ULOQlrMx0dPrb9BwyHODRerW6pOAu741XxnVd5oEvZOHvB7OXIaA.', 'BANJARMASIN', 'P', '2001-04-22', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:44', '2025-01-29 09:01:44'),
+	('4890102230007', 'NOR AZKIA HIDAYANI', '$2y$12$EWnqSMQtGBfY3UqiY7PyxOgDvduSG4hgqY5N3wyyt2AC.SHsaGJuC', 'KANDANGAN', 'P', '2001-02-08', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:44', '2025-01-29 09:01:44'),
+	('4890102230008', 'DESWINA MAHARANI', '$2y$12$aLwEaSpEaZwQAhM7ZA0D8OfDid1X71Qh8sY.67jr7CvhyFlCbIeLW', 'KUALA KAPUAS', 'P', '2002-04-10', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/2.png', '2025-01-29 09:01:44', '2025-01-29 09:01:44'),
+	('4890102230009', 'NURVINA', '$2y$12$/QMdkrHtF0Kwd8vhhaiCle4z9vX1b/ql/tx2L5b3hqF68Vo4X4q8y', 'BANJARMASIN', 'P', '2001-08-10', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:44', '2025-01-29 09:01:44'),
+	('4890102230010', 'NORRAHMI AMELIA', '$2y$12$uh5ydgvKJ8qLejpIYPd8MOuhILSvnbQTCZmJ6eEqu6sVInDQOK/7i', 'BATUMANDI', 'P', '2001-08-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/10.png', '2025-01-29 09:01:44', '2025-01-29 09:01:44'),
+	('4890102230011', 'MUHAMMAD DIFA RAMADHANI', '$2y$12$2cSFSyU.UZ/y4Dxmc69EKOjO9b2DB7XxKfF4P3MSSdgSboCK0Ouae', 'BANJARMASIN', 'L', '2002-03-17', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/7.png', '2025-01-29 09:01:45', '2025-01-29 09:01:45'),
+	('4890102230012', 'MAWADDAH RAHMAH', '$2y$12$wfDN5u3LXLFlw9.UXLQhw.3tn6I..IZyPBLQAnsYwsT6amZCy3EtO', 'BANJARMASIN', 'P', '2001-06-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:45', '2025-01-29 09:01:45'),
+	('4890102230013', 'RESTY SUSANTI', '$2y$12$Z9n94XYyVQVtQ5.Y.FaLdefxo5GN2R/AUbD7XNcLUImA1EjpHpGA.', 'BATU BUA I', 'P', '2001-09-13', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:45', '2025-01-29 09:01:45'),
+	('4890102230014', 'OLIFFIA ELMADITA FATIMAH', '$2y$12$ao5zit/Qv3DwqSGm1lu65OyvKdWCguhnFV84T7EmIt9Vki5ze7y/.', 'MUARA TEWEH', 'P', '2001-06-25', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:45', '2025-01-29 09:01:45'),
+	('4890102230015', 'MUHAMMAD REZA YUDHO PRAYITNO', '$2y$12$najxlHspMlRdjm9Pi8AgQu.gCb8ajaNML/C/MJV5oe6rIcvA.DloK', 'BANJARMASIN', 'L', '2000-12-22', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:45', '2025-01-29 09:01:45'),
+	('4890102230016', 'FITRI', '$2y$12$GcdfmrEJgbj0cYvJI67cIeAIVCI5exBU4uWyNCwsqRZLTaoLMdrVC', 'KAPUAS', 'P', '2001-12-22', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:46', '2025-01-29 09:01:46'),
+	('4890102230017', 'ERSA SETIANA PUTRI', '$2y$12$O/5oLP2RBRSU/iyanLBrgO.W0qFLbxy67fTnDbD2qmlZTIld1lPiC', 'PALANGKA RAYA', 'P', '2001-12-04', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/4.png', '2025-01-29 09:01:46', '2025-01-29 09:01:46'),
+	('4890102230018', 'RIZKI RAHMADI PRATAMA', '$2y$12$VcNtSCy.nf3YKXSoTxE1a.VxPFcFcgn1CDjGu2o8O95cps83bdI7G', 'SAMPIT', 'L', '1999-03-14', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/10.png', '2025-01-29 09:01:46', '2025-01-29 09:01:46'),
+	('4890102230019', 'VIKRI HAIKAL RIVANI', '$2y$12$8cHwM88Swg9QsZC9WXlXSeRVZxp6o0Km72y3laeiB5r7yTk2cXZ1O', 'KUALA KUAYAN', 'L', '2000-07-04', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/5.png', '2025-01-29 09:01:46', '2025-01-29 09:01:46'),
+	('4890102230020', 'RAHMAYANTI', '$2y$12$6s3c6RnLJeLg8h8z96.ttuqyYecqE/iSEmATLKGn61kEIlwaE7PMW', 'BANGKUANG', 'P', '1986-03-31', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/4.png', '2025-01-29 09:01:47', '2025-01-29 09:01:47'),
+	('4890102230021', 'KHAIRUNNISA JOHANNA', '$2y$12$D7WdW09/9MFRKWi9LgbAIOL/El6E4cwCUYhrGSYKXEeBsaleWTsNK', 'KANDANGAN', 'P', '2001-07-16', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/10.png', '2025-01-29 09:01:47', '2025-01-29 09:01:47'),
+	('4890102230022', 'YULI HARIANTI', '$2y$12$2I1UO5ZHxUqwy7j.yKSlG.PndWxggMKX9QSikiIpN4lQco1o557Qq', 'BATULICIN', 'P', '1999-11-22', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/5.png', '2025-01-29 09:01:47', '2025-01-29 09:01:47'),
+	('4890102230023', 'NOOR HAYATI', '$2y$12$Ns7bAl2t2shAkKfifAcVLuJ9E.Jg7QOq1y3e84mgNoAcz9ZCEonxm', 'BANJARMASIN', 'P', '2000-08-27', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/7.png', '2025-01-29 09:01:47', '2025-01-29 09:01:47'),
+	('4890102230024', 'AKHMAD JUNAIDI', '$2y$12$ZKuDL4O1qt3zLOIFrkRS/ul0GOA6DeXxgFWk9yIMMwsI092YjXor.', 'BANUA KUPANG', 'L', '2000-03-28', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/2.png', '2025-01-29 09:01:47', '2025-01-29 09:01:47'),
+	('4890102230025', 'AHMAD RIDHA', '$2y$12$2Vei6uutGIVSpF5DBjvRK.MeH15xtO32EMx8JovszV7bL/akaOULa', 'DURIAN GANTANG TENGAH', 'L', '1998-12-17', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/3.png', '2025-01-29 09:01:48', '2025-01-29 09:01:48'),
+	('4890102230026', 'MUHAMMAD SYAHRIAN', '$2y$12$6a7xr1cVLQqUgY.RawrTLeVC6kHVJtEumR8cH0WSWHBaKpSFNJKOa', 'NEGARA', 'L', '1999-08-18', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:48', '2025-01-29 09:01:48'),
+	('4890102230027', 'ANNISA RIZQI HIJRIANI', '$2y$12$h9R8JSAuOJpEAY0wu/97oe.oN.EEgl9TXMZF9XfUqP0zT65FRR31e', 'MARTAPURA', 'P', '2001-06-26', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:48', '2025-01-29 09:01:48'),
+	('4890102230028', 'MAULIDA NURAZMI OCTAVIA', '$2y$12$gVLaC06r2JCZUOmNmHhCaegiB9PTY.Ue.jzFlHD4ACVc7J2ZdJ60K', 'ALABIO', 'P', '2000-10-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:48', '2025-01-29 09:01:48'),
+	('4890102230029', 'MUHAMMAD HAFIZ ANWARI', '$2y$12$PQbWr97zRRBEv9mMvIJEjuQ37swwkg3MSpPteLSMr.WWI1E8XFOEy', 'PULANG PISAU', 'L', '2002-02-05', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:48', '2025-01-29 09:01:48'),
+	('4890102230030', 'LISTIYA NOR HIDAYATI', '$2y$12$Z4k7LMUcnpFsW60IF/JdH.neLb64Evq6rmcMJNRP8K0VoOcr0IfT2', 'BANJARMASIN', 'P', '2001-09-25', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:49', '2025-01-29 09:01:49'),
+	('4890102230031', 'HARTINI MIFTAHUL JANNAH', '$2y$12$GD6u4S8aemspNXjsgRuiVe3SRzojJFGVNbY13fuFyEOJYvOG7ikwG', 'BANJARBARU', 'P', '1988-12-26', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/7.png', '2025-01-29 09:01:49', '2025-01-29 09:01:49'),
+	('4890102230032', 'HALEYANA RAKHMA', '$2y$12$3UiGBBXgjUVecBUYjcgQd.UgeRg8uJmw2TjBySZXzdh13QaK2WG22', 'AMUNTAI', 'P', '2000-10-13', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/1.png', '2025-01-29 09:01:49', '2025-01-29 09:01:49'),
+	('4890102230033', 'VERAWATI', '$2y$12$OnN77SyfqQItCB4ithqqJOS7wuou30W.wxULmGMpvtDGDk9vABDDu', 'ALABIO', 'P', '1982-08-09', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/9.png', '2025-01-29 09:01:49', '2025-01-29 09:01:49'),
+	('4890102230034', 'MAULANA AKBAR STIRAJ WIBISONO', '$2y$12$4EQ57Icn.k.8f.g.8m04s.SGOSA2T71Gp2VQVAtbsmlA9tbpOGMy2', 'BALIKPAPAN', 'L', '2001-04-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/11.png', '2025-01-29 09:01:50', '2025-01-29 09:01:50'),
+	('4890102230035', 'ANNISA MUMTAZA', '$2y$12$yW/heJBN7bOil11HjFmnK.7XDFqj4S.Qeh3ZGci3Uj.hmb73MTIMu', 'BABIRIK', 'P', '2001-05-02', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/5.png', '2025-01-29 09:01:50', '2025-01-29 09:01:50'),
+	('4890102230036', 'MAHMUDAH', '$2y$12$uXNuno0tq85o44au61IEtObbx5Ka6kjx9oBbtiAtM.l9vdn37XsM2', 'BANJARMASIN', 'P', '1999-10-05', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/10.png', '2025-01-29 09:01:50', '2025-01-29 09:01:50'),
+	('4890102230037', 'CINDY RORA RIZKY', '$2y$12$e9NdHefD.mNidb5WPloa6eIeVB/BdpQz5qKApFeEWf/gQvoIg399G', 'KOTABARU', 'P', '2001-01-29', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/5.png', '2025-01-29 09:01:50', '2025-01-29 09:01:50'),
+	('4890102230038', 'WILLSANING DINIYANTI', '$2y$12$sx8a0nUmFfi2k17cPXJP8eeJ21UcaxHolAhOmx4s1Y76vc5iRU27y', 'KARANG INDAH', 'P', '2001-01-05', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/4.png', '2025-01-29 09:01:50', '2025-01-29 09:01:50'),
+	('4890102230039', 'WAHYU ABDI RAHMAD', '$2y$12$tFjesOgDmrEy2rKxPcSEee.XA4HijfE7.nB45ny5XfH0HLDm24hI2', 'MARTAPURA', 'L', '2000-08-19', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/1.png', '2025-01-29 09:01:51', '2025-01-29 09:01:51'),
+	('4890102230040', 'ESTY ROMIYANTI', '$2y$12$Hb8NO.IyeNeJIHXYqUIk6eDj1GBJRXornYPYMmslI87bF77WqRfFG', 'KOTABARU', 'P', '1999-05-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/7.png', '2025-01-29 09:01:51', '2025-01-29 09:01:51'),
+	('4890102230041', 'GUSLIANA JURAWATI', '$2y$12$Dhbq1eNc.WMPmObMgK/tpO.sQ3HkTZVVHjROLEoCXOQCIVjVb1ACS', 'TANAH LAUT', 'P', '2000-08-24', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/4.png', '2025-01-29 09:01:51', '2025-01-29 09:01:51'),
+	('4890102230042', 'MUAWAMAH', '$2y$12$FAa9k7tRWnat4JEXmy0z5eYMA7vyyBlMPELdPvKbDeIX09DrPIGni', 'NELAYAN', 'P', '1999-07-16', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:51', '2025-01-29 09:01:51'),
+	('4890102230043', 'MAYNADA SAFITRI', '$2y$12$PHEjoeqfr2o.THPRAuH/mOvJOVPepCQ9zujRTgkAqbUxmau8DFuce', 'BANJARMASIN', 'P', '1999-05-29', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/2.png', '2025-01-29 09:01:51', '2025-01-29 09:01:51'),
+	('4890102230044', 'NABILA SAPUTRI', '$2y$12$tbK6tMQocNSX0TU30bTjh.5R.Gfn.ju2pEFm2y7Dpm0.jW4vDtKTe', 'KANDANGAN', 'P', '2002-01-22', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/10.png', '2025-01-29 09:01:52', '2025-01-29 09:01:52'),
+	('4890102230045', 'SONIA NORMA SAFIRA', '$2y$12$ZCzz5CIC3NVHTP9vjvDPXOGSWF/XGPwFuoH8JeKLuR2NfjNXugyKm', 'KUALA KAPUAS', 'P', '2000-05-14', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/1.png', '2025-01-29 09:01:52', '2025-01-29 09:01:52'),
+	('4890102230046', 'FITRIA NURHASNA', '$2y$12$681pAx.reNLRr31cw6e9eebuB85mMeXZYLxkQa.x1fasQIa5ibftS', 'MUARA TEWEH', 'P', '2000-12-27', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:52', '2025-01-29 09:01:52'),
+	('4890102230047', 'DHAIFINA SALSABILA', '$2y$12$AL6vNFwvbjIms2SgeeuZ6.lUU.yd4/lR6PjyncH7oxDHB0dvkJIRi', 'RANTAU', 'P', '2001-07-04', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/0.png', '2025-01-29 09:01:52', '2025-01-29 09:01:52'),
+	('4890102230048', 'WIDYANI', '$2y$12$FeTv8P5rhBYmR6ecBv3coulcLf9Pou4vqMpnVzu/elz8Ys4UHEj.2', 'AMUNTAI', 'P', '2001-07-17', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/4.png', '2025-01-29 09:01:53', '2025-01-29 09:01:53'),
+	('4890102230049', 'MUHAMMAD RIFKIE', '$2y$12$b50MhE6b4sh.HhZwD8tTuuiU1uW2pHkIBthEfthvn9RwiTkD5EMp.', 'KANDANGAN', 'L', '2001-01-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:53', '2025-01-29 09:01:53'),
+	('4890102230050', 'NOVIA MISFA SAPUTRI', '$2y$12$eSBOY.cUqIr1bBWppd8AeuHtNEMj2o7VU1Y29MqgzSaIvgBgzCB0u', 'BANJARBARU', 'P', '1999-11-23', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/2.png', '2025-01-29 09:01:53', '2025-01-29 09:01:53'),
+	('4890102230051', 'FARHANA HAYATI', '$2y$12$50GgacWbkZ6EXaj5PSCH/.cCv9ptiuPG1RsmlS/C60lzNJa2VqPDC', 'MARTAPURA', 'P', '2001-06-04', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/9.png', '2025-01-29 09:01:53', '2025-01-29 09:01:53'),
+	('4890102230052', 'ROSYA RIZKY MAULIDYA', '$2y$12$r2Xyyrqp1LSSDwMlwyvx9..7XAElRvDO02BS1w6iAOc3F5ZhjR4p2', 'BANJARBARU', 'P', '2001-06-11', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:53', '2025-01-29 09:01:53'),
+	('4890102230053', 'DIAH DESY FITRIATIN', '$2y$12$HA56/ceoEBrEFlv5R2Xmp.01Bd/R/FWE6shnITUH14PBP8i98UwRq', 'LAMONGAN', 'P', '2001-02-21', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:54', '2025-01-29 09:01:54'),
+	('4890102230054', 'DWI NOVITA SARI', '$2y$12$AT4RNJKLmZapLxmmsn0uLOJKf8XMpuS4EWGv2N/mruVfRhHlcZAJu', 'SAMPIT', 'P', '1998-11-23', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/5.png', '2025-01-29 09:01:54', '2025-01-29 09:01:54'),
+	('4890102230055', 'HAIRUNNISA', '$2y$12$vTPdxqhE6jBIYyH/z4YLSe2d4Bqxzj8Tzpzi6n7Ch1/.svWHHU/jC', 'BATAKAN', 'P', '2000-08-01', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:54', '2025-01-29 09:01:54'),
+	('4890102230056', 'M. FAJAR AZHARY', '$2y$12$JRq5aRBecHa1tTHwuTbFCOzSAf5aZqW5ACydRvXuKg8YoYbH3oala', 'TAPIN', 'L', '2001-04-01', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/1.png', '2025-01-29 09:01:54', '2025-01-29 09:01:54'),
+	('4890102230057', 'BELLA RAHAYU', '$2y$12$gY/r0MQjobkCkiO82QXXhebTRcTrZShO59AHI/G0viFrfQkZ3tkUu', 'KERTAK HANYAR', 'P', '2000-02-14', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/8.png', '2025-01-29 09:01:54', '2025-01-29 09:01:54'),
+	('4890102230058', 'JAHRATUN NISA', '$2y$12$5eKcabrEZm1RZgK4qkhyeunX264cxPrbmvFX9nPPLIKsGhXDzZFbq', 'TAPIN', 'P', '2001-01-06', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/2.png', '2025-01-29 09:01:55', '2025-01-29 09:01:55'),
+	('4890102230059', 'AHMAD REJANA', '$2y$12$erkewWW/Zg1IfKJssJv4pux7tQk//UF5gnXKOIMF9Z3lbHXH3amD2', 'SUNGAI BULUH', 'L', '2000-04-20', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/6.png', '2025-01-29 09:01:55', '2025-01-29 09:01:55'),
+	('4890102230060', 'AQMALIA', '$2y$12$DDLTslC.v3C91QtG8DNsau/BCXUNnKWZInDhtyYFvM9qbsZfH2Oj2', 'SUNGAI DANAU', 'P', '1996-10-08', 'Profesi PENDIDIKAN PROFESI APOTEKER', NULL, NULL, NULL, 'img/avatars/3.png', '2025-01-29 09:01:55', '2025-01-29 09:01:55');
+/*!40000 ALTER TABLE `mahasiswas` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.migrations
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.migrations: ~13 rows (approximately)
+DELETE FROM `migrations`;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+	(1, '2014_10_12_000000_create_users_table', 1),
+	(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+	(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+	(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+	(5, '2025_01_22_175828_create_banks_table', 1),
+	(6, '2025_01_24_120019_create_mahasiswas_table', 2),
+	(7, '2025_01_24_132405_create_jawabs_table', 3),
+	(8, '2025_01_26_170025_create_ujians_table', 4),
+	(9, '2025_01_28_034917_create_sesis_table', 5),
+	(10, '2025_01_24_132406_create_jawabs_table', 6),
+	(11, '2025_01_24_132407_create_jawabs_table', 7),
+	(12, '2025_01_28_053322_create_pesertas_table', 7),
+	(13, '2025_01_28_122445_create_soals_table', 7);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.password_reset_tokens
+CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.password_reset_tokens: ~0 rows (approximately)
+DELETE FROM `password_reset_tokens`;
+/*!40000 ALTER TABLE `password_reset_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_reset_tokens` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.personal_access_tokens
+CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.personal_access_tokens: ~0 rows (approximately)
+DELETE FROM `personal_access_tokens`;
+/*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.pesertas
+CREATE TABLE IF NOT EXISTS `pesertas` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_mahasiswa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_sesi` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pesertas_sesi_foreign` (`id_sesi`),
+  CONSTRAINT `pesertas_sesi_foreign` FOREIGN KEY (`id_sesi`) REFERENCES `sesis` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.pesertas: ~60 rows (approximately)
+DELETE FROM `pesertas`;
+/*!40000 ALTER TABLE `pesertas` DISABLE KEYS */;
+INSERT INTO `pesertas` (`id`, `id_mahasiswa`, `kode`, `id_sesi`, `created_at`, `updated_at`) VALUES
+	(1, '4890102230001', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(2, '4890102230002', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(3, '4890102230003', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(4, '4890102230004', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(5, '4890102230005', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(6, '4890102230006', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(7, '4890102230007', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(8, '4890102230008', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(9, '4890102230009', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(10, '4890102230010', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(11, '4890102230011', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(12, '4890102230012', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(13, '4890102230013', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(14, '4890102230014', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(15, '4890102230015', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(16, '4890102230016', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(17, '4890102230017', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(18, '4890102230018', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(19, '4890102230019', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(20, '4890102230020', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(21, '4890102230021', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(22, '4890102230022', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(23, '4890102230023', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(24, '4890102230024', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(25, '4890102230025', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(26, '4890102230026', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(27, '4890102230027', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(28, '4890102230028', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(29, '4890102230029', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(30, '4890102230030', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(31, '4890102230031', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(32, '4890102230032', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(33, '4890102230033', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(34, '4890102230034', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(35, '4890102230035', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(36, '4890102230036', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(37, '4890102230037', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(38, '4890102230038', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(39, '4890102230039', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(40, '4890102230040', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(41, '4890102230041', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(42, '4890102230042', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(43, '4890102230043', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(44, '4890102230044', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(45, '4890102230045', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(46, '4890102230046', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(47, '4890102230047', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(48, '4890102230048', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(49, '4890102230049', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(50, '4890102230050', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(51, '4890102230051', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(52, '4890102230052', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(53, '4890102230053', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(54, '4890102230054', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(55, '4890102230055', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(56, '4890102230056', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(57, '4890102230057', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(58, '4890102230058', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(59, '4890102230059', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06'),
+	(60, '4890102230060', 'OKM34', 2, '2025-01-29 05:59:06', '2025-01-29 05:59:06');
+/*!40000 ALTER TABLE `pesertas` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.sesis
+CREATE TABLE IF NOT EXISTS `sesis` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ujian` bigint(20) unsigned NOT NULL,
+  `sesi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sesis_ujian_foreign` (`id_ujian`),
+  CONSTRAINT `sesis_ujian_foreign` FOREIGN KEY (`id_ujian`) REFERENCES `ujians` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.sesis: ~1 rows (approximately)
+DELETE FROM `sesis`;
+/*!40000 ALTER TABLE `sesis` DISABLE KEYS */;
+INSERT INTO `sesis` (`id`, `id_ujian`, `sesi`, `kode`, `created_at`, `updated_at`) VALUES
+	(2, 2, 'PSPPA', 'OKM34', '2025-01-29 01:58:27', '2025-01-29 01:58:27');
+/*!40000 ALTER TABLE `sesis` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.soals
+CREATE TABLE IF NOT EXISTS `soals` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.soals: ~0 rows (approximately)
+DELETE FROM `soals`;
+/*!40000 ALTER TABLE `soals` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soals` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.ujians
+CREATE TABLE IF NOT EXISTS `ujians` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tanggal` datetime NOT NULL,
+  `durasi` int(10) unsigned NOT NULL DEFAULT '0',
+  `kode` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.ujians: ~2 rows (approximately)
+DELETE FROM `ujians`;
+/*!40000 ALTER TABLE `ujians` DISABLE KEYS */;
+INSERT INTO `ujians` (`id`, `nama`, `tanggal`, `durasi`, `kode`, `created_at`, `updated_at`) VALUES
+	(1, 'Demo', '2025-01-28 17:57:00', 6, 'PHW44', '2025-01-28 09:57:55', '2025-01-28 10:06:54'),
+	(2, 'Try Out', '2025-01-30 09:00:00', 200, 'OKM34', '2025-01-29 01:56:42', '2025-01-29 01:58:15');
+/*!40000 ALTER TABLE `ujians` ENABLE KEYS */;
+
+-- Dumping structure for table tkom.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tkom.users: ~1 rows (approximately)
+DELETE FROM `users`;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `name`, `password`, `foto`, `created_at`, `updated_at`) VALUES
+	(1, 'admin', '$2y$12$MNtinFYZqJC5uZnSxdH97us.rTcQU0nh2keBEXwXtON1Ymwj6gLFK', 'img/avatars/1.png', NULL, NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

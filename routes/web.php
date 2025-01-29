@@ -32,13 +32,6 @@ Route::middleware(['auth.or.mahasiswa'])->group(function () {
     // Route::get('/soal/1', [SoalController::class, 'index']);
     Route::get('/durasi', [SoalController::class, 'durasi']);
     Route::get('/jawab/{nomor}/{jawab}', [SoalController::class, 'jawab'])->name('jawab');
-    // Route::get('/soal/a', [SoalController::class, 'a']);
-    // Route::get('/tes', [LandingController::class, 'tes']);
-
-    // Route::get('/bank', [BankController::class, 'bank'])->name('bank');
-
-
-
 
     Route::get('/kalkulator', [BankController::class, 'kalkulator'])->name('kalkulator');
     // Route::get('/soal/{nomor}', [BankController::class, 'soal'])->name('soal');

@@ -38,9 +38,9 @@
                                                     <td>{{ $sesi->ujian->nama }} </td>
                                                     <td>{{ $sesi->sesi }}</td>
                                                     <td class="text-center">
-                                                        <button type="button" class="U_B_peserta btn btn-xs btn-primary" data-id="#M_U_peserta-{{ $sesi->id }}"
+                                                        <button type="button" class="U_B_peserta btn btn-sm btn-primary" data-id="#M_U_peserta-{{ $sesi->id }}"
                                                             {{ $sesi->kode == null ? 'disabled' : '' }}>
-                                                            Peserta
+                                                            <i class='bx bx-user'></i> Peserta
                                                         </button>
                                                     </td>
                                                     <td class="text-center">

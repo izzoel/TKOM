@@ -7,7 +7,7 @@
                 @foreach ($banks as $bank)
                     @php
                         $nomor = '#' . $bank->nomor;
-                        $terjawab = !is_null($jawabs->$nomor) ? 'btn-success' : 'btn-outline-primary';
+                        $terjawab = optional($jawabs)->$nomor ? 'btn-success' : 'btn-outline-primary';
                     @endphp
                     <div class="col-2 p-0 mb-3">
                         <a href="{{ route('soal', $bank->nomor) }}" class="">

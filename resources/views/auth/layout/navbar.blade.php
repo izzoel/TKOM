@@ -18,19 +18,6 @@
                     <span class="align-middle">Nilai Baku</span>
                 </button>
             </li>
-            {{-- @endif --}}
-            {{-- <li>
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <div class="text-muted fw-semibold px-2 fs-5"> / </div>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Persediaan
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                </ul>
-            </li> --}}
-
         </ul>
     </div>
     <div class="navbar-nav-right d-flex align-items-center ms-auto" id="navbar-collapse-right">
@@ -57,7 +44,7 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     <span class="fw-semibold d-block">{{ auth()->check() ? auth()->user()->name : auth('mahasiswa')->user()->nama }}</span>
-                                    <small class="text-muted">{{ auth()->check() ?: auth('mahasiswa')->user()->nim }}</small>
+                                    <small class="text-muted">{{ auth()->check() ? '' : auth('mahasiswa')->user()->nim }}</small>
                                 </div>
                             </div>
                         </a>
