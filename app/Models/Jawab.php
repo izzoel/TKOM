@@ -14,9 +14,10 @@ class Jawab extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'nim',
-        'nomor',
-        'jawaban',
-    ];
+    // protected $fillable = [
+    //     'nim',
+    //     'nomor',
+    //     'jawaban',
+    // ];
+    protected $guarded = [];
 }

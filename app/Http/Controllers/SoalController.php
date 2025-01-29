@@ -24,7 +24,8 @@ class SoalController extends Controller
         }
         $soals = Bank::where('nomor', $nomor)->get();
         $banks = Bank::all();
-        $jawabs = Jawab::where('nim', auth()->guard('mahasiswa')->user()->nim)->pluck('nomor')->toArray() ?? [];
+        $jawabs = Jawab::where('nim', auth()->guard('mahasiswa')->user()->nim)->first();
+
         return view('auth.peserta.soal', compact('banks', 'soals', 'jawabs'));
     }
 
@@ -37,13 +38,17 @@ class SoalController extends Controller
 
     public function jawab($nomor, $jawab, Request $request)
     {
-        Jawab::updateOrCreate(
-            ['nim' => auth()->guard('mahasiswa')->user()->nim, 'nomor' => $nomor], // Kondisi untuk memeriksa entri yang ada
-            [
-                'nomor' => $nomor,
-                'jawaban' => $jawab
-            ] // Data yang akan diisi atau diperbarui
-        );
+        $nim = auth()->guard('mahasiswa')->user()->nim;
+
+        $search = [
+            'nim' => $nim,
+        ];
+
+        $update = [
+            '#' . $nomor => $jawab
+        ];
+
+        Jawab::updateOrCreate($search, $update);
 
         $totalQuestions = Bank::count();
 

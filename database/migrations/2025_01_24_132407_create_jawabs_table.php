@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('jawabs', function (Blueprint $table) {
             $table->id();
             $table->string('nim');
-            $table->integer('nomor');
-            $table->string('jawaban');
+            for ($i = 1; $i < 201; $i++) {
+                $table->string('#' . $i, 2)->nullable();
+            }
             $table->timestamps();
         });
     }

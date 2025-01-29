@@ -4,11 +4,10 @@
     <ul class="menu-inner py-1" style="visibility: hidden">
         <div class="container">
             <div class="row text-center justify-content-center">
-                {{-- {{ auth()->user()->nama }} --}}
                 @foreach ($banks as $bank)
                     @php
-                        $terjawab = in_array($bank->nomor, $jawabs) ? 'btn-success' : 'btn-outline-primary';
-                        // $terjawab = 'btn-outline-primary';
+                        $nomor = '#' . $bank->nomor;
+                        $terjawab = !is_null($jawabs->$nomor) ? 'btn-success' : 'btn-outline-primary';
                     @endphp
                     <div class="col-2 p-0 mb-3">
                         <a href="{{ route('soal', $bank->nomor) }}" class="">
@@ -18,6 +17,7 @@
                         </a>
                     </div>
                 @endforeach
+
             </div>
             <div class="row text-center justify-content-center m-4">
                 <button id="submit" type="submit" class="btn btn-danger">

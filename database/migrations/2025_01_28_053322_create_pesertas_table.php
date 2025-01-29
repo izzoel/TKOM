@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pesertas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nim')->constrained('mahasiswas')->onDelete('cascade');
+            $table->string('id_mahasiswa');
             $table->string('kode');
             $table->foreignId('sesi')->constrained('sesis')->onDelete('cascade');
             $table->timestamps();
