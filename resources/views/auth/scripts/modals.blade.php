@@ -63,4 +63,33 @@
           });
 
       });
+
+      $('#importForm').on('submit', function() {
+          $('#M_S_peserta').modal('hide');
+          $('#spinner').show();
+          $('#importForm').on('submit', function(event) {
+              event.preventDefault();
+              var form = $(this)[0];
+              var formData = new FormData(form);
+
+              $.ajax({
+                  url: $(this).attr('action'),
+                  type: 'POST',
+                  data: formData,
+                  processData: false,
+                  contentType: false,
+                  beforeSend: function() {
+                      $('#spinner').show();
+                  },
+                  success: function(response) {
+                      $('#spinner').hide();
+                      // handle success response
+                  },
+                  error: function(response) {
+                      $('#spinner').hide();
+                      // handle error response
+                  }
+              });
+          });
+      });
   </script>

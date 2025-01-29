@@ -25,7 +25,12 @@ class MahasiswaImport implements ToModel
 
         return new Mahasiswa([
             'nim' => $row[0],
+            'nama' => $row[1],
             'password' => Hash::make($row[0]),
+            'tempat_lahir' => $row[2],
+            'kelamin' => $row[3],
+            'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', $row[4])->format('Y-m-d'),
+            'prodi' => $row[5],
             'foto' => 'img/avatars/' . $i . '.png'
         ]);
     }
