@@ -3,33 +3,26 @@
 @endif
 
 
-<div class="modal fade" id="M_S_ujian" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="M_S_bank" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Ujian</h5>
+                <h5 class="modal-title">Import bank</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="nav-align-top mb-4">
-                    <form action="{{ route('ujian_store') }}" method="POST">
+                    <form id="importForm" action="{{ route('bank_import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label" for="nama">Nama<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="try out 1" required />
+                            <label for="file" class="form-label">File Upload</label>
+                            <input class="form-control" type="file" id="file" name="file" />
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="tanggal">Tanggal</label>
-                            <input type="datetime-local" class="form-control" id="tanggal" name="tanggal" value="" required>
-                        </div>
-                        <div class="mb-5">
-                            <label class="form-label" fors="durasi">Durasi</label>
-                            <div class="input-group input-group-merge">
-                                <input type="number" class="form-control" placeholder="durasi" id="durasi" name="durasi" required>
-                                <span class="input-group-text">(menit)</span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-end">
+                        {{-- <a href="{{ asset('Template Import -- bank.csv') }}">
+                            <i class="tf-icons bx bxs-download"></i>Template <span class="badge bg-label-danger">.csv</span>
+                        </a> --}}
+
+                        <div class="d-flex justify-content-end mt-3">
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
@@ -40,7 +33,7 @@
 </div>
 
 
-<div class="modal modalUpdate fade" id="M_U_ujian" tabindex="-1" aria-hidden="true">
+<div class="modal modalUpdate fade" id="M_U_bank" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -84,11 +77,11 @@
 </div>
 
 
-<div class="modal modalDelete fade" id="M_D_ujian" tabindex="-1" aria-hidden="true">
+<div class="modal modalDelete fade" id="M_D_bank" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="delete_ujian">Konfirmasi Hapus</h5>
+                <h5 class="modal-title" id="delete_bank">Konfirmasi Hapus</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -105,7 +98,6 @@
                 <form id="D_route" action="" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="hidden" name="ujian" value="ujian">
                     <button type="submit" class="btn btn-danger">Hapus</button>
                 </form>
             </div>

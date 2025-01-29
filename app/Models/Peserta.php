@@ -15,16 +15,6 @@ class Peserta extends Model
         'id_sesi'
     ];
 
-    public function mahasiswa()
-    {
-        return $this->belongsTo(Mahasiswa::class, 'id_mahasiswa');
-    }
-    /*************  ✨ Codeium Command ⭐  *************/
-    /**
-     * The sesi that this peserta belongs to
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-/******  f8e08fec-fe80-4016-86af-eec06cfc5ef9  *******/
     public function sesi()
     {
         return $this->belongsTo(Sesi::class, 'id_sesi');

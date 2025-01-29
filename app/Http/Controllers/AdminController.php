@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\Sesi;
 use App\Models\Admin;
 use App\Models\Ujian;
@@ -13,13 +14,15 @@ class AdminController extends Controller
 
     protected $ujians;
     protected $sesis;
-    protected $peserta;
+    protected $pesertas;
+    protected $banks;
 
     public function __construct(Request $request)
     {
         $this->ujians = Ujian::all();
         $this->sesis = Sesi::all();
-        $this->peserta = Peserta::all();
+        $this->pesertas = Peserta::all();
+        $this->banks = Bank::all();
     }
     /**
      * Display a listing of the resource.
@@ -33,13 +36,18 @@ class AdminController extends Controller
     {
         $ujians = $this->ujians;
         $sesis = $this->sesis;
-        $pesertas = $this->peserta;
+        $pesertas = $this->pesertas;
         return view('auth.pages.sesi', compact('ujians', 'sesis', 'pesertas'));
     }
     public function ujian()
     {
         $ujians = $this->ujians;
         return view('auth.pages.ujian', compact('ujians'));
+    }
+    public function bank()
+    {
+        $banks = $this->banks;
+        return view('auth.pages.bank', compact('banks'));
     }
 
     /**

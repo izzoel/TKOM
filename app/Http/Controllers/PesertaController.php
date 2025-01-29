@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
 use App\Imports\PesertaImport;
+use App\Imports\MahasiswaImport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PesertaController extends Controller
@@ -39,7 +40,7 @@ class PesertaController extends Controller
         $id_sesi = $request->input('id_sesi');
 
         Excel::import(new PesertaImport($kode, $id_sesi), $request->file('file'));
-
+        Excel::import(new MahasiswaImport, $request->file('file'));
         return back()->with('success', 'Data berhasil diimpor!');
     }
 

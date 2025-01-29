@@ -1,12 +1,13 @@
 <?php
 
-use App\Models\Ujian;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BankController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\SesiController;
+use App\Http\Controllers\SoalController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UjianController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PesertaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +21,38 @@ use App\Http\Controllers\UjianController;
 */
 
 
-Route::get('/', [BankController::class, 'index'])->name('landing');
-Route::any('/login', [BankController::class, 'login'])->name('login');
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::get('/selesai', [LandingController::class, 'selesai'])->name('selesai');
+Route::any('/login', [LandingController::class, 'login'])->name('login');
+Route::any('/peserta', [LandingController::class, 'peserta'])->name('peserta');
 
 Route::middleware(['auth.or.mahasiswa'])->group(function () {
+
+    Route::get('/soal/{nomor}', [SoalController::class, 'index'])->name('soal');
+    // Route::get('/soal/1', [SoalController::class, 'index']);
+    Route::get('/durasi', [SoalController::class, 'durasi']);
+    Route::get('/jawab/{nomor}/{jawab}', [SoalController::class, 'jawab'])->name('jawab');
+    // Route::get('/soal/a', [SoalController::class, 'a']);
+    // Route::get('/tes', [LandingController::class, 'tes']);
+
+    // Route::get('/bank', [BankController::class, 'bank'])->name('bank');
+
+
+
+
     Route::get('/kalkulator', [BankController::class, 'kalkulator'])->name('kalkulator');
-    Route::get('/bank', [BankController::class, 'bank'])->name('bank');
-    Route::get('/soal/{nomor}', [BankController::class, 'soal'])->name('soal');
-    Route::get('/logout', [BankController::class, 'logout'])->name('logout');
-    Route::get('/jawab/{nomor}/{jawab}', [BankController::class, 'jawab'])->name('jawab');
+    // Route::get('/soal/{nomor}', [BankController::class, 'soal'])->name('soal');
+    Route::get('/logout', [LandingController::class, 'logout'])->name('logout');
+    Route::get('/submit', [LandingController::class, 'submit'])->name('submit');
+    // Route::get('/jawab/{nomor}/{jawab}', [BankController::class, 'jawab'])->name('jawab');
 
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::get('/admin/ujian', [AdminController::class, 'ujian'])->name('ujian');
     Route::get('/admin/sesi', [AdminController::class, 'sesi'])->name('sesi');
+    Route::get('/admin/bank', [AdminController::class, 'bank'])->name('bank');
+    // Route::get('/admin/bank', [BankController::class, 'bank'])->name('bank');
+
+    Route::post('/admin/bank/import', [BankController::class, 'import'])->name('bank_import');
 
     Route::get('/admin/ujian/show/{id}', [UjianController::class, 'show']);
     Route::post('/admin/ujian/store', [UjianController::class, 'store'])->name('ujian_store');

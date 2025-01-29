@@ -58,7 +58,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Peserta</h5>
+                <h5 class="modal-title">Import Peserta</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -86,8 +86,8 @@
                         <i class="tf-icons bx bxs-download"></i>Template <span class="badge bg-label-danger">.csv</span>
                     </a>
 
-                    <input type="text" name="kode" id="P_kode" />
-                    <input type="text" name="id_sesi" id="P_id_sesi" />
+                    <input type="hidden" name="kode" id="P_kode" />
+                    <input type="hidden" name="id_sesi" id="P_id_sesi" />
 
                     <div class="d-flex justify-content-end mt-3">
                         <button type="submit" class="btn btn-primary">Simpan</button>

@@ -15,10 +15,7 @@
                             </a>
                         </div>
                         <h4 class="mt-4 mb-2">Try Out Ujian Kompetensi</h4>
-                        <p class="mb-4">Selamat datang peserta! 👋</p>
-                        <a id="user" class="btn btn-primary align-items-center" href="" role="button">
-                            Masuk
-                        </a>
+                        <p class="mb-4">Anda telah menjawab! 👋</p>
                     </div>
                 </div>
             </div>

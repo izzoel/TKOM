@@ -35,8 +35,6 @@ $(document).ready(function() {
             Swal.showValidationMessage(`Password Salah!`);
           }
         } catch (error) {
-          console.log(error); // Log the error to the console or display an error   
-          alert(name);
           Swal.showValidationMessage(`Request failed: ${error}`);
           
         }

@@ -72,11 +72,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Mahasiswa::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
