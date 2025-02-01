@@ -32,7 +32,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('auth.pages.admin');
+        return view('auth.pages.ujian');
     }
 
     public function sesi()
