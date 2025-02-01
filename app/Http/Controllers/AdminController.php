@@ -32,7 +32,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('auth.pages.ujian');
+        // return view('auth.pages.ujian');
+        return redirect()->route('ujian');
     }
 
     public function sesi()
