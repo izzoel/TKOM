@@ -14,6 +14,7 @@ class LandingController extends Controller
      */
     public function index()
     {
+        // dd(auth()->check());
         return  view('guest.landing');
     }
 

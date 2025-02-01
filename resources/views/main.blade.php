@@ -4,36 +4,7 @@
 
 <head>
     @include('auth.layout.header')
-    @guest
-        <style>
-            body {
-                background-image: url('https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                overflow: hidden;
-            }
 
-            #particles-js {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-            }
-
-            #calculator-frame {
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
-
-            html,
-            body {
-                height: 100%;
-                margin: 0;
-                overflow: hidden;
-            }
-        </style>
-    @endguest
 </head>
 
 <body>
