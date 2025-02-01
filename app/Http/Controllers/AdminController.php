@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\Sesi;
 use App\Models\Admin;
+use App\Models\Jawab;
 use App\Models\Ujian;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class AdminController extends Controller
 
     protected $ujians;
     protected $sesis;
+    protected $jawabs;
     protected $pesertas;
     protected $banks;
 
@@ -21,6 +23,7 @@ class AdminController extends Controller
     {
         $this->ujians = Ujian::all();
         $this->sesis = Sesi::all();
+        $this->jawabs = Jawab::all();
         $this->pesertas = Peserta::all();
         $this->banks = Bank::all();
     }
@@ -42,7 +45,8 @@ class AdminController extends Controller
     public function ujian()
     {
         $ujians = $this->ujians;
-        return view('auth.pages.ujian', compact('ujians'));
+        $jawabs = $this->jawabs;
+        return view('auth.pages.ujian', compact('ujians', 'jawabs'));
     }
     public function bank()
     {

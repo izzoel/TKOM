@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    @guest
+    {{-- @guest
         @yield('landing')
-    @endguest
+    @endguest --}}
 
 
     <!-- Layout wrapper -->
@@ -40,6 +40,7 @@
                         @elseif (auth()->user()->nama == 'admin') --}}
                     {{-- @yield('admin') --}}
                     @yield(Route::currentRouteName() ? Str::replace('.', '-', Route::currentRouteName()) : 'content')
+                    @yield('jawab')
                     {{-- @endif --}}
                 </div>
 

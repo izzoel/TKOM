@@ -27,10 +27,6 @@
                             <label class="form-label" for="sesi">sesi<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="sesi" name="sesi" placeholder="demo" required />
                         </div>
-                        {{-- <div class="mb-3">
-                            <label class="form-label" for="peserta">peserta<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="peserta" name="peserta" placeholder="demo" required />
-                        </div> --}}
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>

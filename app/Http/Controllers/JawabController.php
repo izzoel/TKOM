@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\Jawab;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,13 @@ class JawabController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Jawab $jawab)
+    public function show(Jawab $jawab, $id)
     {
-        //
+        $jawabs = Jawab::where('id_ujian', $id)->get();
+        $kuncis = Bank::pluck('jawaban')->toArray();
+        $kolom = $jawabs->first()->getAttributes();
+
+        return view('auth.pages.jawab', compact('jawabs', 'kolom', 'kuncis'));
     }
 
     /**

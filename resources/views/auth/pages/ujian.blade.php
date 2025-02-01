@@ -28,6 +28,7 @@
                                                 <th class="text-start">Tanggal</th>
                                                 <th class="text-start">Durasi</th>
                                                 <th class="text-center">Kode</th>
+                                                <th class="text-center">Hasil</th>
                                                 <th class="col-auto" data-priority="2">Aksi</th>
                                             </tr>
                                         </thead>
@@ -49,6 +50,12 @@
                                                                 Close
                                                             </a>
                                                         @endif
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a type="button" href="{{ route('hasil', $ujian->id) }}" class=" btn btn-sm btn-primary"
+                                                            {{ $ujian->kode == null ? 'disabled' : '' }}>
+                                                            <i class='bx bx-user'></i> Hasil
+                                                        </a>
                                                     </td>
                                                     <td class="text-center px-0">
                                                         <a type="button" class="U_B_ujian text-info" data-id="#M_U_ujian-{{ $ujian->id }}">

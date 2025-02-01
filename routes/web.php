@@ -5,6 +5,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\SoalController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\JawabController;
 use App\Http\Controllers\UjianController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PesertaController;
@@ -61,4 +62,5 @@ Route::middleware(['auth.or.mahasiswa'])->group(function () {
     Route::delete('/admin/sesi/destroy/{id}', [SesiController::class, 'destroy']);
 
     Route::post('/admin/peserta/import', [PesertaController::class, 'import'])->name('peserta_import');
+    Route::get('/admin/jawab/show/{id}', [JawabController::class, 'show'])->name('hasil');
 });
